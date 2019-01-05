@@ -4,7 +4,6 @@ import com.irs.annotation.SysLog;
 import com.irs.pojo.TbSupplier;
 import com.irs.service.SupplierService;
 import com.irs.util.ResultUtil;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,22 +22,21 @@ public class supplierController {
 		return "page/supplier/supplierList";
 	}
 	
-/*	@RequiresPermissions("supplier:supplier:save")*/
+
 	@RequestMapping("/addSupplier")
-	public String addCustomer() {
+	public String addSupplier() {
 		return "page/supplier/addsupplier";
 	}
 	
-/*	@RequiresPermissions("supplier:supplier:save")*/
+
 	@RequestMapping("/editSupplier")
-	public String editCustomer(Integer id,Model model) {
+	public String editSupplier(Integer id,Model model) {
 		TbSupplier supplier=supplierService.selectSupplieById(id);
 		model.addAttribute("supplier",supplier);
 		return "page/supplier/editsupplier";
 	}
 	
 	@RequestMapping("/list")
-/*	@RequiresPermissions("supplier:supplier:list")*/
 	@ResponseBody
 	public ResultUtil getSupplierList(Integer page,Integer limit) {
 		ResultUtil suppliers = supplierService.selectSupplies(page, limit);
@@ -52,9 +50,8 @@ public class supplierController {
 	 */
 	@SysLog(value="添加供应商信息")
 	@RequestMapping("/save")
-/*	@RequiresPermissions("supplier:supplier:save")*/
 	@ResponseBody
-	public ResultUtil insCustomer(TbSupplier supplier) {
+	public ResultUtil insSupplier(TbSupplier supplier) {
 		try {
             supplierService.addSupplie(supplier);
 			return ResultUtil.ok();
@@ -71,9 +68,8 @@ public class supplierController {
 	 */
 	@SysLog(value="删除供应商信息")
 	@RequestMapping("/delete")
-/*	@RequiresPermissions("supplier:supplier:delete")*/
 	@ResponseBody
-	public ResultUtil delCustomerById(Integer id) {
+	public ResultUtil delSupplierById(Integer id) {
 		try {
             supplierService.deleteSupplieById(id);
 			return ResultUtil.ok();
@@ -89,9 +85,8 @@ public class supplierController {
 	 */
 	@SysLog(value="批量删除供应商信息")
 	@RequestMapping("/deletes")
-/*	@RequiresPermissions("supplier:supplier:delete")*/
 	@ResponseBody
-	public ResultUtil delCustomer(String supplierStr) {
+	public ResultUtil delSupplier(String supplierStr) {
 		try {
             supplierService.deleteSuppliesByIds(supplierStr);
 			return ResultUtil.ok();
@@ -107,9 +102,8 @@ public class supplierController {
 	 */
 	@SysLog(value="更新供应商信息")
 	@RequestMapping("/update")
-/*	@RequiresPermissions("supplier:supplier:update")*/
 	@ResponseBody
-	public ResultUtil updateCustomer(TbSupplier supplier) {
+	public ResultUtil updateSupplier(TbSupplier supplier) {
 		try {
             supplierService.updateSupplie(supplier);
 			return ResultUtil.ok();
