@@ -9,13 +9,13 @@ layui.config({
 		$ = layui.jquery;
 		form = layui.form;
 
- 	form.on("submit(editGoods)",function(data){
+ 	form.on("submit(editCustomer)",function(data){
  		//弹出loading
  		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
  		var msg;
  		$.ajax({
     		type: "post",
-            url: ctx+"/goods/update",
+            url: ctx+"/customer/update",
             data:data.field,
 			dataType:"json",
 			success:function(d){

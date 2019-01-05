@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加商品</title>
+<title>添加客户</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -36,73 +36,80 @@
 <body class="childrenBody">
 	<form class="layui-form" style="width: 80%;" id="aaf">
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品名称</label>
+			<label class="layui-form-label">客户编号</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					lay-verify="required" placeholder="请输入商品名称" name="name" value="">
+					lay-verify="required" placeholder="请输入客户编号" name="number" value="">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品规格</label>
+			<label class="layui-form-label">客户名称</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					    placeholder="请输入商品规格" name="specifications" value="">
+					    placeholder="请输入客户名称" name="name" value="">
 			</div>
 		</div>
 		
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品批号</label>
+			<label class="layui-form-label">客户等级</label>
 			<div class="layui-input-block">
-				<input type="text" name="batchNumber" class="layui-input userName"
-					 placeholder="请输入商品批号" value="">
+				<input type="radio" name="grade" value="0" title="普通客户" checked>
+				<input type="radio" name="grade" value="1" title="VIP客户" >
 			</div>
 		</div>
 
 
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品批准文号</label>
+			<label class="layui-form-label">客户性别</label>
 			<div class="layui-input-block">
-				<input type="text" name="approvalNumber" class="layui-input userName"
-					   placeholder="请输入商品批准文号" value="">
+				<input type="radio" name="sex" value="0" title="男" checked>
+				<input type="radio" name="sex" value="1" title="女" >
 			</div>
 		</div>
 
 
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品产地</label>
+			<label class="layui-form-label">客户证件号</label>
 			<div class="layui-input-block">
-				<input type="text" name="home" class="layui-input userName"
-					    placeholder="请输入商品产地" value="">
+				<input type="text" name="carded" class="layui-input userName"
+					    placeholder="请输入客户证件号" value="">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品价格</label>
+			<label class="layui-form-label">客户地址</label>
 			<div class="layui-input-block">
-				<input type="text" name="price" class="layui-input userName"
+				<input type="text" name="address" class="layui-input userName"
 					    placeholder="请输入商品价格" value="">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品包装</label>
+			<label class="layui-form-label">客户电话</label>
 			<div class="layui-input-block">
-				<input type="text" name="packing" class="layui-input userName"
-					  placeholder="请输入商品包装" value="">
+				<input type="text" name="phone" class="layui-input userName"
+					  placeholder="请输入客户电话" value="">
 			</div>
 		</div>
 
+		<div class="layui-form-item">
+			<label class="layui-form-label">客户QQ</label>
+			<div class="layui-input-block">
+				<input type="text" name="qq" class="layui-input userName"
+					   placeholder="请输入客户QQ" value="">
+			</div>
+		</div>
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="addGoods">立即提交</button>
+				<button class="layui-btn" lay-submit="" lay-filter="addCustomer">立即提交</button>
 			</div>
 		</div>
 	</form>
 	<script type="text/javascript" src="${ctx }/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx }/page/goods/addgoods.js"></script>
+	<script type="text/javascript" src="${ctx }/page/customer/addcustomer.js"></script>
 </body>
 </html>

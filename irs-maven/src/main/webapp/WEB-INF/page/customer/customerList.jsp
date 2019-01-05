@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>商品列表</title>
+	<title>客户列表</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,12 +25,12 @@
 <body class="childrenBody">
 	<input type="hidden" id="adminId" value="<shiro:principal property='id'"/>
 	<blockquote class="layui-elem-quote list_search">
-		<shiro:hasPermission name="goods:goods:save">
+		<shiro:hasPermission name="customer:customer:save">
 			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal goodsAdd_btn" ><i class="layui-icon">&#xe608;</i>   添加商品</a>
+				<a class="layui-btn layui-btn-normal customerAdd_btn" ><i class="layui-icon">&#xe608;</i>   添加客户</a>
 			</div>
 		</shiro:hasPermission>
-		<shiro:hasPermission name="goods:goods:delete">
+		<shiro:hasPermission name="customer:customer:delete">
 			<div class="layui-inline">
 				<a class="layui-btn layui-btn-danger batchDel"><i class="layui-icon">&#xe640;</i>批量删除</a>
 			</div>
@@ -40,15 +40,15 @@
 		</div>
 	</blockquote>
 	<!-- 数据表格 -->
-	<table id="goodsList" lay-filter="test"></table>
+	<table id="customerList" lay-filter="test"></table>
 	
 	<script type="text/javascript" src="${ctx}/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx}/page/goods/goodsList.js"></script>
+	<script type="text/javascript" src="${ctx}/page/customer/customerList.js"></script>
 	<script type="text/html" id="barEdit">
-		<shiro:hasPermission name="goods:goods:update">
+		<shiro:hasPermission name="customer:customer:update">
   			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
 		</shiro:hasPermission>
-		<shiro:hasPermission name="goods:goods:delete">
+		<shiro:hasPermission name="customer:customer:delete">
   			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 		</shiro:hasPermission>
 	</script>
