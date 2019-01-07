@@ -70,7 +70,7 @@ public class PurchaseOrderController {
 			//shiro中取出登录的管理员
 			TbAdmin admin = (TbAdmin) SecurityUtils.getSubject().getPrincipal();
 			purchaseReturnOrder.setSticks(admin.getId().intValue());
-			purchaseReturnOrderService.addPurchaseOrdere(purchaseReturnOrder);
+			purchaseReturnOrderService.addPurchaseReturnOrder(purchaseReturnOrder);
 			return ResultUtil.ok();
 		} catch (Exception e) {
 			return ResultUtil.error("添加出错,稍后再试！");

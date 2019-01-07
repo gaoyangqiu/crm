@@ -38,6 +38,7 @@
 		<input type="hidden" name="number" value="${purchaseOrder.number }"/>
 		<input type="hidden" name="price" value="${purchaseOrder.price }"/>
 		<input type="hidden" name="supplier" value="${purchaseOrder.supplier }"/>
+        <input type="hidden" name="type" value="${purchaseOrder.type }"/>
 		<div class="layui-form-item">
 			<label class="layui-form-label">商品名称</label>
 			<div class="layui-input-block">

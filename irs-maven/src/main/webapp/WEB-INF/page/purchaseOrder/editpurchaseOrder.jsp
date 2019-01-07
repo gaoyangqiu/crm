@@ -116,7 +116,7 @@
 			<label class="layui-form-label">批号</label>
 			<div class="layui-input-block">
 				<input type="text" name="batchNumber" class="layui-input userName"
-					   placeholder="请输入账号" value="${purchaseOrder.batchNumber}">
+					   placeholder="请输入批号" value="${purchaseOrder.batchNumber}">
 			</div>
 		</div>
 
@@ -124,7 +124,7 @@
 			<label class="layui-form-label">批准文号</label>
 			<div class="layui-input-block">
 				<input type="text" name="approvalNumber" class="layui-input userName"
-					   placeholder="请输入账号" value="${purchaseOrder.approvalNumber}">
+					   placeholder="请输入批准文号" value="${purchaseOrder.approvalNumber}">
 			</div>
 		</div>
 		<div class="layui-form-item">

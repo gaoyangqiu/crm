@@ -7,15 +7,15 @@ import com.irs.util.ResultUtil;
 
 public interface PurchaseReturnOrderService {
 
-    ResultUtil selectPurchaseOrders(Integer page, Integer limit);
+    ResultUtil selectPurchaseReturnOrders(Integer page, Integer limit);
 
-    void addPurchaseOrdere(TbPurchaseReturnOrder purchaseOrder);
+    void addPurchaseReturnOrder(TbPurchaseReturnOrder purchaseOrder);
 
-    void deletePurchaseOrderById(Integer id);
+    void deletePurchaseReturnOrderById(Integer id);
 
-    void deletePurchaseOrdersByIds(String supplieIds);
+    void deletePurchaseReturnOrdersByIds(String supplieIds);
 
-    TbPurchaseReturnOrder selectPurchaseOrderById(Integer id);
+    TbPurchaseReturnOrder selectPurchaseReturnOrderById(Integer id);
 
-    void updatePurchaseOrder(TbPurchaseReturnOrder returnOrder);
+    void updatePurchaseReturnOrder(TbPurchaseReturnOrder returnOrder);
 }

@@ -8,8 +8,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f88292f3-bd78-468d-a46f-90ee18f6ca36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/irs/controller/supplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irs/controller/supplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/irs/controller/PurchaseOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/irs/controller/PurchaseOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/irs/service/PurchaseReturnOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/irs/service/PurchaseReturnOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/irs/service/impl/PurchaseReturnOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/irs/service/impl/PurchaseReturnOrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/controller/PurchaseOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/controller/PurchaseOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/service/PurchaseReturnOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/service/PurchaseReturnOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/service/impl/PurchaseReturnOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/irs/service/impl/PurchaseReturnOrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,30 +47,32 @@
     <session id="148179846">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.84" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.87" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="3" />
-          <entry key="java" value="109" />
-          <entry key="js" value="44" />
-          <entry key="jsp" value="49" />
+          <entry key="class" value="5" />
+          <entry key="java" value="158" />
+          <entry key="js" value="68" />
+          <entry key="jsp" value="78" />
           <entry key="properties" value="4" />
           <entry key="xml" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="109" />
-          <entry key="JSP" value="49" />
-          <entry key="JavaScript" value="44" />
+          <entry key="CLASS" value="5" />
+          <entry key="JAVA" value="158" />
+          <entry key="JSP" value="78" />
+          <entry key="JavaScript" value="68" />
           <entry key="Properties" value="4" />
           <entry key="XML" value="24" />
         </counts>
@@ -67,18 +80,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="1559" />
-          <entry key="js" value="356" />
-          <entry key="jsp" value="698" />
+          <entry key="java" value="2030" />
+          <entry key="js" value="410" />
+          <entry key="jsp" value="833" />
           <entry key="properties" value="22" />
           <entry key="xml" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1559" />
-          <entry key="JSP" value="698" />
-          <entry key="JavaScript" value="356" />
+          <entry key="JAVA" value="2030" />
+          <entry key="JSP" value="833" />
+          <entry key="JavaScript" value="410" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="22" />
           <entry key="XML" value="32" />
@@ -89,28 +102,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="67" column="45" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="113" column="14" lean-forward="true" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
+            <state relative-caret-position="23">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="43" />
+            <state relative-caret-position="200">
+              <caret line="112" column="87" selection-start-line="112" selection-start-column="68" selection-end-line="112" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/SaleReturnOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
+              <folding>
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#999#1000#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,19 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dataSource1</find>
-      <find>barEdit</find>
-      <find>Criterion</find>
-      <find>BaseResultMap</find>
-      <find>goods:goods:list</find>
-      <find>Criteria</find>
-      <find>countByExample</find>
-      <find>addCarousel</find>
-      <find>goodsAdd_btn</find>
-      <find>链接格式不正确</find>
-      <find>edit</find>
-      <find>goods</find>
-      <find>good</find>
       <find>addCustomer</find>
       <find>TbCustomer</find>
       <find>customer</find>
@@ -152,6 +156,24 @@
       <find>supplierList</find>
       <find>purchaseOrderList</find>
       <find>saveReturnPurchaseOrder</find>
+      <find>TBPurchaseReturnOrder</find>
+      <find>TbPurchaseOrderExample</find>
+      <find>type</find>
+      <find>PurchaseOrder</find>
+      <find>purchaseOrder</find>
+      <find>purchaseOrderMapper</find>
+      <find>bSaleOrderExample</find>
+      <find>addreturnsaleOrder</find>
+      <find>purchaseReturnOrder</find>
+      <find>采购</find>
+      <find>addReturnSaleOrder</find>
+      <find>saveReturnSaleOrder</find>
+      <find>batchDel</find>
+      <find>editSaleReturnOrde</find>
+      <find>saleReturnOrder</find>
+      <find>PurchaseReturnOrder</find>
+      <find>Purchase</find>
+      <find>editSaleReturnOrder</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -163,6 +185,23 @@
       <replace>surchaseOrder</replace>
       <replace>PurchaseOrder</replace>
       <replace>purchaseOrder</replace>
+      <replace>TBPurchaseReturnOrder</replace>
+      <replace>TbPurchaseReturnOrder</replace>
+      <replace>PurchaseReturnOrderVo</replace>
+      <replace>TbPurchaseReturnOrderExample</replace>
+      <replace>purchaseReturnOrder</replace>
+      <replace>PurchaseReturnOrder</replace>
+      <replace>sale</replace>
+      <replace>PaleOrder</replace>
+      <replace>saleOrder</replace>
+      <replace>SaleOrder</replace>
+      <replace>TbSaleOrderMapper</replace>
+      <replace>saleOrderMapper</replace>
+      <replace>TbSaleOrderExample</replace>
+      <replace>saleReturnOrder</replace>
+      <replace>销售</replace>
+      <replace>SaleReturnOrder</replace>
+      <replace>Sale</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -171,35 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/GoodsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/mapper/TbGoodsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/mapper/TbCustomerMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/mapper/TbSupplierMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/CarouselServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/addgoods.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/GoodsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/GoodsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/addgoods.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/goodsList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/editGoods.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/editGoods.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/goodsList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/pojo/TbCustomer.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/editcustomer.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/addcustomer.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/customerList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/editcustomer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/customerList.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/customer/addcustomer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/SupplierService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/SupplierService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/CustomerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/SupplierServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/addsupplier.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/addsupplier.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/editsupplier.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/editsupplier.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/supplierList.jsp" />
@@ -211,17 +221,46 @@
         <option value="$PROJECT_DIR$/src/main/java/com/irs/vo/PurchaseOrderVo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addpurchaseOrder.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseOrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/purchaseOrderList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/purchaseOrderList.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/editpurchaseReturnOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/editpurchaseReturnOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseReturnOrderController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/purchaseReturnOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/purchaseReturnOrderList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/SaleOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/vo/PurchaseReturnOrderVo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/saleOrderList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addsaleOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/editsaleOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addsaleOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/vo/SaleOrderVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/SaleOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/SaleReturnOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/vo/SaleReturnOrderVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/service/impl/SaleReturnOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/purchaseReturnOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/purchaseReturnOrderList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/editsaleOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editpurchaseReturnOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/saleReturnOrderList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/saleOrderList.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addreturnsaleOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/SaleOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addreturnsaleOrder.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/saleReturnOrderList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/irs/controller/SaleReturnOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.jsp" />
       </list>
     </option>
   </component>
@@ -263,9 +302,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="458" />
-    <option name="y" value="45" />
-    <option name="width" value="1936" />
+    <option name="x" value="547" />
+    <option name="y" value="52" />
+    <option name="width" value="1932" />
     <option name="height" value="1079" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -328,16 +367,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="irs" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="irs-maven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="irs" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -412,7 +441,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="goods" type="462c0819:PsiDirectoryNode" />
+              <item name="saleOrder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -422,21 +451,56 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="purchaseOrder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="irs-maven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="supplier" type="462c0819:PsiDirectoryNode" />
+              <item name="saleReturnOrder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="aop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="aop" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -473,6 +537,51 @@
               <item name="springframework" type="462c0819:PsiDirectoryNode" />
               <item name="beans" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="cglib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irs_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:4.3.6.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-4.3.6.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="cglib" type="462c0819:PsiDirectoryNode" />
+              <item name="proxy" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -484,7 +593,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546685521741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546863195437" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -494,13 +603,15 @@
       <recent name="com.irs.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.irs.vo" />
       <recent name="com.irs.service" />
       <recent name="com.irs.controller" />
       <recent name="com.irs.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work\crm1\irs-maven\src\main\webapp\WEB-INF\page\purchaseOrder" />
       <recent name="D:\work\crm1\irs-maven\src\main\webapp\WEB-INF\page" />
+      <recent name="D:\work\crm1\irs-maven\src\main\webapp\WEB-INF\page\saleOrder" />
+      <recent name="D:\work\crm1\irs-maven\src\main\webapp\WEB-INF\page\purchaseOrder" />
       <recent name="D:\work\crm1\irs-maven\src\main\webapp\WEB-INF\page\goods" />
     </key>
   </component>
@@ -626,18 +737,20 @@
       <workItem from="1546501669976" duration="13329000" />
       <workItem from="1546565363633" duration="6606000" />
       <workItem from="1546573073154" duration="9696000" />
-      <workItem from="1546650503861" duration="20506000" />
+      <workItem from="1546650503861" duration="20889000" />
+      <workItem from="1546824121626" duration="7183000" />
+      <workItem from="1546845717002" duration="12882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50137000" />
+    <option name="totallyTimeSpent" value="70585000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -648,13 +761,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3275488" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.32321042" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39045554" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32135308" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3275488" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
@@ -698,276 +811,20 @@
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/irs/controller/SaleReturnOrderController.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/CustomerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="54" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbSupplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/addsupplier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/addsupplier.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="90" column="61" lean-forward="true" selection-start-line="90" selection-start-column="61" selection-end-line="90" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/annotation/DataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/quartz/MethodLogQuartz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/util/ShiroUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/util/VerifyCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-569">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-scheduled.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1446" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/SupplierService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="20" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbPurchaseOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1056">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.6.RELEASE/spring-beans-4.3.6.RELEASE.jar!/org/springframework/beans/BeanUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="289" column="68" lean-forward="true" selection-start-line="289" selection-start-column="68" selection-end-line="289" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/SupplierServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="55" column="9" lean-forward="true" selection-start-line="50" selection-start-column="4" selection-end-line="55" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/supplierController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addpurchaseOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addpurchaseOrder.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/GoodsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1436#1437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/LogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding>
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3015">
-          <caret line="159" selection-start-line="159" selection-end-line="159" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/UserManagementController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2139">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/mapper/TbUsersMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="290" column="2" selection-start-line="290" selection-start-column="2" selection-end-line="290" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/editsupplier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/supplier/editsupplier.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1604">
           <caret line="106" column="43" lean-forward="true" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseOrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,13 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1448">
           <caret line="90" column="55" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="90" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/purchaseOrderList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1007,13 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/vo/PurchaseOrderVo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1021,51 +864,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/purchaseOrderList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="684">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/purchaseOrderList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="45" />
+        <state relative-caret-position="836">
+          <caret line="44" column="78" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -1076,10 +885,339 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/addpurchaseOrder.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbPurchaseReturnOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.6.RELEASE/spring-core-4.3.6.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/editpurchaseReturnOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/goods/goodsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="48" column="13" selection-start-line="33" selection-start-column="14" selection-end-line="48" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/purchaseReturnOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="41" column="115" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/editpurchaseReturnOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-437">
+          <caret line="42" column="110" selection-start-line="42" selection-start-column="91" selection-end-line="42" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseReturnOrder/purchaseReturnOrderList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/PurchaseReturnOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/SaleOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/vo/PurchaseReturnOrderVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/PurchaseReturnOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addsaleOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/vo/SaleOrderVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding>
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addsaleOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/editpurchaseOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="128" column="14" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="128" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/SaleReturnOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1383#1400#0" expanded="true" />
+            <element signature="e#2666#2667#0" expanded="true" />
+            <element signature="e#2723#2724#0" expanded="true" />
+            <element signature="e#2792#2793#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/purchaseOrder/addreturnpurchaseOrder.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="113" column="14" lean-forward="true" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
+        <state relative-caret-position="208">
+          <caret line="109" column="14" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="109" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/vo/SaleReturnOrderVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/editsaleOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="38" selection-start-line="38" selection-end-line="117" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/editsaleOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/saleOrderList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="44" column="78" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/saleOrderList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/PurchaseReturnOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbSaleOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/SaleOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addreturnsaleOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/SaleOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleOrder/addreturnsaleOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="102" column="80" lean-forward="true" selection-start-line="102" selection-start-column="80" selection-end-line="102" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/saleReturnOrderList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/pojo/TbSaleReturnOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.6.RELEASE/spring-aop-4.3.6.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="473" selection-start-line="473" selection-end-line="473" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/service/impl/SaleReturnOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3247#3248#0" expanded="true" />
+            <element signature="e#3307#3308#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/saleReturnOrderList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="31" column="61" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="112" column="87" selection-start-line="112" selection-start-column="68" selection-end-line="112" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/saleReturnOrder/editsaleReturnOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/irs/controller/SaleReturnOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
