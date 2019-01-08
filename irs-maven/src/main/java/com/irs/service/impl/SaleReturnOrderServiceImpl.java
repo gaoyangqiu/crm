@@ -8,6 +8,7 @@ import com.irs.pojo.*;
 import com.irs.service.SaleReturnOrderService;
 import com.irs.util.ResultUtil;
 import com.irs.vo.SaleReturnOrderVo;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class SaleReturnOrderServiceImpl implements SaleReturnOrderService {
     private TbAdminMapper adminMapper;
     @Autowired
     private TbCustomerMapper customerMapper;
+    @Autowired
+    private TbStockMapper stockMapper;
     @Override
     public ResultUtil selectSaleReturnOrders(Integer page, Integer limit) {
         PageHelper.startPage(page, limit);
@@ -77,6 +80,19 @@ public class SaleReturnOrderServiceImpl implements SaleReturnOrderService {
     @Override
     public void addSaleReturnOrder(TbSaleReturnOrder saleReturnOrder) {
 
+        //销售退单的时候对对应商品的库存进行增加
+        TbStockExample stockExample=new TbStockExample();
+        TbStockExample.Criteria criteria=stockExample.createCriteria();
+        criteria.andGoodsIdEqualTo(saleReturnOrder.getType());
+        //根据采购单的商品id查询到对应的库存
+        List<TbStock> stocks=stockMapper.selectByExample(stockExample);
+        //数据库设置的库存的goodsId为唯一,一个商品对应一条库存记录,所以直接get0
+        if (CollectionUtils.isNotEmpty(stocks)){
+            TbStock stock= stocks.get(0);
+            //更新库存的数量
+            stock.setAmount(stock.getAmount().add(new BigDecimal(saleReturnOrder.getAmount().toString())));
+            stockMapper.updateByPrimaryKey(stock);
+        }
         saleReturnOrderMapper.insert(saleReturnOrder);
     }
 

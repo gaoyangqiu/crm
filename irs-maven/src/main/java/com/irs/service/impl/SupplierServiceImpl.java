@@ -66,4 +66,11 @@ public class SupplierServiceImpl implements SupplierService {
     public void updateSupplie(TbSupplier supplier) {
         supplierMapper.updateByPrimaryKeySelective(supplier);
     }
+
+    @Override
+    public List<TbSupplier> selectAllSuppliers() {
+        TbSupplierExample example=new TbSupplierExample();
+        List<TbSupplier> suppliers=supplierMapper.selectByExample(example);
+        return suppliers;
+    }
 }

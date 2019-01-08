@@ -4,6 +4,8 @@ package com.irs.service;
 import com.irs.pojo.TbSupplier;
 import com.irs.util.ResultUtil;
 
+import java.util.List;
+
 
 public interface SupplierService {
 
@@ -19,4 +21,6 @@ public interface SupplierService {
     TbSupplier selectSupplieById(Integer id);
 
     void updateSupplie(TbSupplier supplier);
+
+    List<TbSupplier> selectAllSuppliers();
 }

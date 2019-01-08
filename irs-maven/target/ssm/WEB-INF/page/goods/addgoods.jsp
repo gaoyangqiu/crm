@@ -50,7 +50,28 @@
 					    placeholder="请输入商品规格" name="specifications" value="">
 			</div>
 		</div>
-		
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品类型</label>
+			<div class="layui-input-block">
+				<select name="goodsType" lay-filter="aihao" lay-verify="required">
+				<c:forEach items="${goodsTypes}" var="var" varStatus="vs">
+					<option value="${var.id}"  > ${var.name}</option>
+				</c:forEach>
+				</select>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">供应商</label>
+			<div class="layui-input-block">
+				<select name="suppliersId" lay-filter="aihao" lay-verify="required">
+					<c:forEach items="${suppliers}" var="var" varStatus="vs">
+						<option value="${var.id}"  > ${var.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">商品批号</label>
 			<div class="layui-input-block">
@@ -58,8 +79,6 @@
 					 placeholder="请输入商品批号" value="">
 			</div>
 		</div>
-
-
 
 		<div class="layui-form-item">
 			<label class="layui-form-label">商品批准文号</label>

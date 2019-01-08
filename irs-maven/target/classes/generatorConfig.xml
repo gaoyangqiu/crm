@@ -42,10 +42,7 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		 <table schema="" tableName="tb_purchase_order"></table>
-		<table schema="" tableName="tb_purchase_return_order"></table>
-		<table schema="" tableName="tb_sale_order"></table>
-		<table schema="" tableName="tb_sale_return_order"></table>
+		 <table schema="" tableName="tb_goods_type"></table>
 
 	</context>
 </generatorConfiguration>

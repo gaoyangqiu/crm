@@ -60,8 +60,26 @@
 			</div>
 		</div>
 
-
-
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品类型</label>
+			<div class="layui-input-block">
+				<select name="goodsType" lay-filter="aihao">
+					<c:forEach items="${goodsTypes}" var="var" varStatus="vs">
+						<option value="${var.id}"    <c:if test="${var.id==goods.goodsType}">selected</c:if>> ${var.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">供应商</label>
+			<div class="layui-input-block">
+				<select name="suppliersId" lay-filter="aihao" lay-verify="required">
+					<c:forEach items="${suppliers}" var="var" varStatus="vs">
+						<option value="${var.id}"  <c:if test="${var.id==goods.suppliersId}">selected</c:if> > ${var.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">商品批准文号</label>
 			<div class="layui-input-block">

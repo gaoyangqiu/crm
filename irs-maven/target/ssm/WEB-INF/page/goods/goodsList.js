@@ -18,6 +18,8 @@ layui.config({
               ,{field:'id', title: 'ID', sort: true}
 /*              ,{field:'goodsType', title: '轮播图',templet:'#tableImg'}*/
 				,{field:'name', title: '商品名称'}
+                ,{field:'goodsTypeName', title: '类型'}
+                ,{field:'supplierName', title: '供应商'}
               ,{field:'specifications', title: '规格'}
               ,{field:'batchNumber', title: '批号'}
               ,{field:'approvalNumber', title: '批准文号'}

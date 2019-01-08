@@ -2,7 +2,11 @@ package com.irs.controller;
 
 import com.irs.annotation.SysLog;
 import com.irs.pojo.TbGoods;
+import com.irs.pojo.TbGoodsType;
+import com.irs.pojo.TbSupplier;
 import com.irs.service.GoodsService;
+import com.irs.service.GoodsTypeService;
+import com.irs.service.SupplierService;
 import com.irs.util.ResultUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +15,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("goods/")
 public class GoodsController {
 	@Autowired
 	private GoodsService goodsService;
+
+	@Autowired
+	private GoodsTypeService goodsTypeService;
+
+	@Autowired
+	private SupplierService supplierService;
 	
 	@RequestMapping("/goodsList")
 	public String goodsList() {
@@ -24,14 +36,23 @@ public class GoodsController {
 	
 	@RequiresPermissions("goods:goods:save")
 	@RequestMapping("/addGoods")
-	public String addGoods() {
+	public String addGoods(Model model) {
+		//分别查询出来商品类型和供应商的所有记录,用来加载
+		List<TbGoodsType> goodsTypes=goodsTypeService.selectGoodsTypes();
+		List<TbSupplier> suppliers=supplierService.selectAllSuppliers();
+		model.addAttribute("goodsTypes",goodsTypes);
+		model.addAttribute("suppliers",suppliers);
 		return "page/goods/addgoods";
 	}
 	
 	@RequiresPermissions("goods:goods:save")
 	@RequestMapping("/editGoods")
 	public String editGoods(Integer id,Model model) {
+		List<TbGoodsType> goodsTypes=goodsTypeService.selectGoodsTypes();
+		List<TbSupplier> suppliers=supplierService.selectAllSuppliers();
 		TbGoods goods=goodsService.selectGoodsById(id);
+		model.addAttribute("goodsTypes",goodsTypes);
+		model.addAttribute("suppliers",suppliers);
 		model.addAttribute("goods",goods);
 		return "page/goods/editGoods";
 	}
