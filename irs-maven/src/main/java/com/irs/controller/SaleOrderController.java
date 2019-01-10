@@ -29,8 +29,11 @@ public class SaleOrderController {
 	public String saleOrderList() {
 		return "page/saleOrder/saleOrderList";
 	}
-	
 
+	@RequestMapping("/statistics")
+	public String statistics() {
+		return "page/queryStatistics/querystatistics";
+	}
 	@RequestMapping("/addSaleOrder")
 	public String addSaleOrder() {
 		return "page/saleOrder/addsaleOrder";
@@ -155,11 +158,15 @@ public class SaleOrderController {
 		}
 	}
 
+
 	@SysLog(value="销售查询统计接口")
 	@RequestMapping("/queryStatistics")
 	@ResponseBody
-	public ResultUtil queryStatistics() {
-		ResultUtil saleOrders = saleOrderService.queryStatistics();
+	/**
+	 * type 1查询销售额2查询销售数量
+	 */
+	public ResultUtil queryStatistics(Integer type) {
+		ResultUtil saleOrders = saleOrderService.queryStatistics(type);
 		return saleOrders;
 	}
 }

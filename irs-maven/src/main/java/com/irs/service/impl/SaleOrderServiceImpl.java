@@ -124,31 +124,36 @@ public class SaleOrderServiceImpl implements SaleOrderService {
     }
 
     @Override
-    public ResultUtil queryStatistics() {
-/*        TbSaleOrderExample example=new TbSaleOrderExample();
-        //排序
-        example.setOrderByClause("id DESC");
-        List<TbSaleOrder> list = saleOrderMapper.selectByExample(example);
-        if (CollectionUtils.isEmpty(list)){
-            return null;
-        }
-        //查询出来的list根据销售额排序
-        Collections.sort(list, new Comparator<TbSaleOrder>() {
-            @Override
-            public int compare(TbSaleOrder o1, TbSaleOrder o2) {
-                return o2.getSalePrice().multiply(new BigDecimal(o2.getAmount())).subtract(o1.getSalePrice().multiply(new BigDecimal(o1.getAmount()))).intValue();
-            }
-        });
-        List<SaleOrderVo> converVos=converVo(list);
-        if (CollectionUtils.isEmpty(converVos)){
-            return null;
-        }
-        //组装柱状图的数据
+    public ResultUtil queryStatistics(Integer type) {
         List<String> xAxis=Lists.newArrayList();
         List<BigDecimal> datas=Lists.newArrayList();
-        for (SaleOrderVo converVo : converVos) {
-            xAxis.add(converVo.getGoodsName());
-            datas.add(converVo.getSalePrice().multiply(new BigDecimal(converVo.getAmount())));
+        TbGoodsExample example=new TbGoodsExample();
+        List<TbGoods> goods=goodsMapper.selectByExample(example);
+        for (TbGoods good : goods) {
+            TbSaleOrderExample tbSaleOrderExample=new TbSaleOrderExample();
+            TbSaleOrderExample.Criteria tbSaleOrdercriteria=tbSaleOrderExample.createCriteria();
+            tbSaleOrdercriteria.andTypeEqualTo(good.getId());
+            List<TbSaleOrder> tbSaleOrders=saleOrderMapper.selectByExample(tbSaleOrderExample);
+            if(1==type) {
+                BigDecimal money = new BigDecimal(0);
+                if (CollectionUtils.isNotEmpty(tbSaleOrders)) {
+                    for (TbSaleOrder tbSaleOrder : tbSaleOrders) {
+                        BigDecimal totalMoney = tbSaleOrder.getSalePrice().multiply(new BigDecimal(tbSaleOrder.getAmount()));
+                        money = money.add(totalMoney);
+                    }
+                }
+                xAxis.add(good.getName());
+                datas.add(money);
+            }else if (2==type){
+                BigDecimal amount = BigDecimal.ZERO;
+                if (CollectionUtils.isNotEmpty(tbSaleOrders)) {
+                    for (TbSaleOrder tbSaleOrder : tbSaleOrders) {
+                        amount = amount.add(new BigDecimal(tbSaleOrder.getAmount()));
+                    }
+                }
+                xAxis.add(good.getName());
+                datas.add(amount);
+            }
         }
         Map map=Maps.newHashMap();
         map.put("xAxis",xAxis);
@@ -156,7 +161,6 @@ public class SaleOrderServiceImpl implements SaleOrderService {
         ResultUtil resultUtil = new ResultUtil();
         resultUtil.setCode(0);
         resultUtil.setData(map);
-        return resultUtil;*/
-        return null;
+        return resultUtil;
     }
 }

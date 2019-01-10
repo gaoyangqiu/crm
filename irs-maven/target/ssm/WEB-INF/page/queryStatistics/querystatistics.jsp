@@ -26,15 +26,15 @@
 </head>
 <body class="childrenBody" style="margin: 1%">
 	<fieldset class="layui-elem-field layui-field-title">
-		<legend>网站用户性别占比</legend>
+		<legend>销售统计</legend>
 	</fieldset>
 	<div id="querystatistics" style="width: 600px; height: 400px;"></div>
-
+	<div id="querystatisticsAmount" style="width: 600px; height: 400px;"></div>
 
 	</div>
 
 	<script type="text/javascript" src="${ctx}/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx}/page/querystatistics/querystatistics.js"></script>
+	<script type="text/javascript" src="${ctx}/page/queryStatistics/querystatistics.js"></script>
 
 </body>
 </html>
