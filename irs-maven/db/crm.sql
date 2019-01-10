@@ -11,7 +11,7 @@
  Target Server Version : 50642
  File Encoding         : 65001
 
- Date: 08/01/2019 20:43:03
+ Date: 10/01/2019 19:21:18
 */
 
 SET NAMES utf8mb4;
@@ -105,7 +105,7 @@ CREATE TABLE `tb_goods`  (
   `packing` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '包装',
   `suppliers_id` int(11) NULL DEFAULT NULL COMMENT '供应商ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_goods
@@ -113,6 +113,7 @@ CREATE TABLE `tb_goods`  (
 INSERT INTO `tb_goods` VALUES (1, 7, '西瓜', 'test1', 'test1', 'test1', '中国', 0.03, 'test1', 3);
 INSERT INTO `tb_goods` VALUES (2, 5, 'test1', 'test1', 'test1', 'test3', '中国', 0.03, '123456', 4);
 INSERT INTO `tb_goods` VALUES (3, 5, '冬瓜', 'test1', 'test3', 'test3', '中国', 15.00, 'test3', 4);
+INSERT INTO `tb_goods` VALUES (4, 7, '黄瓜', 'test1', 'test3', 'test3', 'china', 40.00, 'test1', 4);
 
 -- ----------------------------
 -- Table structure for tb_goods_type
@@ -145,7 +146,7 @@ CREATE TABLE `tb_log`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'ip',
   `create_time` datetime(0) NOT NULL COMMENT '操作时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 848 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 874 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_log
@@ -308,6 +309,32 @@ INSERT INTO `tb_log` VALUES (844, 'admin', '更新库存信息', '/stock/update'
 INSERT INTO `tb_log` VALUES (845, 'admin', '更新库存信息', '/stock/update', '{\"id\":1,\"goodsId\":null,\"price\":15,\"amount\":null,\"cordon\":0.00};', '0:0:0:0:0:0:0:1', '2019-01-08 19:48:00');
 INSERT INTO `tb_log` VALUES (846, 'admin', '更新库存信息', '/stock/update', '{\"id\":1,\"goodsId\":3,\"price\":15,\"amount\":null,\"cordon\":0.00};', '0:0:0:0:0:0:0:1', '2019-01-08 19:51:45');
 INSERT INTO `tb_log` VALUES (847, 'admin', '更新库存信息', '/stock/update', '{\"id\":1,\"goodsId\":3,\"price\":15,\"amount\":1.00,\"cordon\":0.00};', '0:0:0:0:0:0:0:1', '2019-01-08 19:55:16');
+INSERT INTO `tb_log` VALUES (848, 'admin', '添加商品信息', '/goods/save', '{\"id\":null,\"goodsType\":7,\"name\":\"黄瓜\",\"specifications\":\"test1\",\"batchNumber\":\"test3\",\"approvalNumber\":\"test3\",\"home\":\"china\",\"price\":40,\"packing\":\"test1\",\"suppliersId\":4};', '0:0:0:0:0:0:0:1', '2019-01-09 11:45:32');
+INSERT INTO `tb_log` VALUES (849, 'admin', '添加采购单', '/purchaseOrder/save', '{\"id\":null,\"number\":122,\"type\":4,\"price\":20,\"amount\":90,\"money\":2700,\"home\":\"中国\",\"supplier\":3,\"remark\":\"test\",\"batchNumber\":\"test3\",\"approvalNumber\":\"test3\",\"sticks\":null};', '0:0:0:0:0:0:0:1', '2019-01-09 11:46:57');
+INSERT INTO `tb_log` VALUES (850, 'admin', '添加采购单', '/purchaseOrder/saveReturnPurchaseOrder', '{\"id\":null,\"number\":122,\"type\":4,\"price\":40.00,\"amount\":30,\"money\":null,\"home\":\"china\",\"supplier\":3,\"remark\":\"退了30个\",\"batchNumber\":\"test3\",\"approvalNumber\":\"test3\",\"sticks\":null};', '0:0:0:0:0:0:0:1', '2019-01-09 11:47:49');
+INSERT INTO `tb_log` VALUES (851, 'admin', '更新库存信息', '/stock/update', '{\"id\":2,\"goodsId\":4,\"price\":40.00,\"amount\":60.00,\"cordon\":60};', '0:0:0:0:0:0:0:1', '2019-01-09 14:21:31');
+INSERT INTO `tb_log` VALUES (852, 'admin', '更新库存信息', '/stock/update', '{\"id\":2,\"goodsId\":4,\"price\":40.00,\"amount\":60.00,\"cordon\":80};', '0:0:0:0:0:0:0:1', '2019-01-09 14:24:27');
+INSERT INTO `tb_log` VALUES (853, 'admin', '维护菜单信息', '/sys/menuForm', '{\"menuId\":0,\"title\":\"销售额排行\",\"icon\":\"\",\"href\":\"saleOrder/statistics\",\"perms\":\"\",\"spread\":null,\"parentId\":null,\"sorting\":null,\"checked\":null,\"isOpen\":false};\"1\";', '0:0:0:0:0:0:0:1', '2019-01-10 18:02:37');
+INSERT INTO `tb_log` VALUES (854, 'admin', '删除菜单信息', '/sys/delMenuById/78', '78;', '0:0:0:0:0:0:0:1', '2019-01-10 18:02:51');
+INSERT INTO `tb_log` VALUES (855, 'admin', '维护菜单信息', '/sys/menuForm', '{\"menuId\":70,\"title\":\"销售额排行\",\"icon\":\"\",\"href\":\"saleOrder/statistics\",\"perms\":\"\",\"spread\":null,\"parentId\":null,\"sorting\":null,\"checked\":null,\"isOpen\":false};\"1\";', '0:0:0:0:0:0:0:1', '2019-01-10 18:03:11');
+INSERT INTO `tb_log` VALUES (856, 'admin', '更新角色信息', '/sys/updRole', '{\"roleId\":61,\"roleName\":\"管理员\",\"roleRemark\":\"普通管理员\"};\"1,9,10,33,11,34,35,36,37,14,15,42,43,44,45,57,58,61,62,63,64,59,60,65,66,67,68,69,71,72,70,73,74,75,79\";', '0:0:0:0:0:0:0:1', '2019-01-10 18:04:14');
+INSERT INTO `tb_log` VALUES (857, 'admin', '更新角色信息', '/sys/updRole', '{\"roleId\":1,\"roleName\":\"超级管理员\",\"roleRemark\":\"超级管理员\"};\"1,2,3,16,17,18,19,4,20,21,22,23,46,47,48,49,50,9,10,33,11,34,35,36,37,14,15,42,43,44,45,51,52,53,54,55,56,57,58,61,62,63,64,59,60,65,66,67,68,77,69,71,72,70,73,74,75,79\";', '0:0:0:0:0:0:0:1', '2019-01-10 18:04:23');
+INSERT INTO `tb_log` VALUES (858, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:29:04');
+INSERT INTO `tb_log` VALUES (859, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:29:14');
+INSERT INTO `tb_log` VALUES (860, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:29:22');
+INSERT INTO `tb_log` VALUES (861, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:30:17');
+INSERT INTO `tb_log` VALUES (862, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:34:27');
+INSERT INTO `tb_log` VALUES (863, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:39:31');
+INSERT INTO `tb_log` VALUES (864, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:40:43');
+INSERT INTO `tb_log` VALUES (865, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:46:19');
+INSERT INTO `tb_log` VALUES (866, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:49:42');
+INSERT INTO `tb_log` VALUES (867, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:50:23');
+INSERT INTO `tb_log` VALUES (868, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:50:49');
+INSERT INTO `tb_log` VALUES (869, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:53:35');
+INSERT INTO `tb_log` VALUES (870, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:58:38');
+INSERT INTO `tb_log` VALUES (871, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '', '0:0:0:0:0:0:0:1', '2019-01-10 18:59:35');
+INSERT INTO `tb_log` VALUES (872, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '2;', '0:0:0:0:0:0:0:1', '2019-01-10 19:15:24');
+INSERT INTO `tb_log` VALUES (873, 'admin', '销售查询统计接口', '/saleOrder/queryStatistics', '1;', '0:0:0:0:0:0:0:1', '2019-01-10 19:15:24');
 
 -- ----------------------------
 -- Table structure for tb_menus
@@ -323,7 +350,7 @@ CREATE TABLE `tb_menus`  (
   `parent_id` bigint(20) NOT NULL COMMENT '父节点',
   `sorting` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_menus
@@ -385,6 +412,7 @@ INSERT INTO `tb_menus` VALUES (73, '销售单', '', 'saleOrder/saleOrderList'
 INSERT INTO `tb_menus` VALUES (74, '销售退货单', '', 'saleReturnOrder/saleReturnOrderList', '', 'false', 70, NULL);
 INSERT INTO `tb_menus` VALUES (75, '库存管理', '', 'stock/stockList', '', 'false', 70, NULL);
 INSERT INTO `tb_menus` VALUES (77, '商品类型管理', '', 'goodsType/goodsTypeList', '', 'false', 57, NULL);
+INSERT INTO `tb_menus` VALUES (79, '销售额排行', '', 'saleOrder/statistics', '', 'false', 70, NULL);
 
 -- ----------------------------
 -- Table structure for tb_purchase_order
@@ -404,12 +432,13 @@ CREATE TABLE `tb_purchase_order`  (
   `approval_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批准文号',
   `sticks` int(11) NULL DEFAULT NULL COMMENT '经手人的id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_purchase_order
 -- ----------------------------
 INSERT INTO `tb_purchase_order` VALUES (7, 123, 1, 0.03, 30, 90.00, '中国', 3, 'test', 'test3', 'test3', 19);
+INSERT INTO `tb_purchase_order` VALUES (8, 122, 4, 20.00, 90, 2700.00, '中国', 3, 'test', 'test3', 'test3', 1);
 
 -- ----------------------------
 -- Table structure for tb_purchase_return_order
@@ -429,13 +458,14 @@ CREATE TABLE `tb_purchase_return_order`  (
   `approval_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '批准文号',
   `sticks` int(11) NULL DEFAULT NULL COMMENT '经手人的id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_purchase_return_order
 -- ----------------------------
 INSERT INTO `tb_purchase_return_order` VALUES (1, 1, 1, 0.03, 90, NULL, '中国', 3, 'test', 'test1', 'test1', 1);
 INSERT INTO `tb_purchase_return_order` VALUES (2, 1, 1, 0.03, 90, NULL, '中国', 3, 'test', 'test1', 'test1', 1);
+INSERT INTO `tb_purchase_return_order` VALUES (3, 122, 4, 40.00, 30, NULL, 'china', 3, '退了30个', 'test3', 'test3', 1);
 
 -- ----------------------------
 -- Table structure for tb_roles
@@ -527,6 +557,7 @@ INSERT INTO `tb_roles_menus` VALUES (73, 1);
 INSERT INTO `tb_roles_menus` VALUES (74, 1);
 INSERT INTO `tb_roles_menus` VALUES (75, 1);
 INSERT INTO `tb_roles_menus` VALUES (77, 1);
+INSERT INTO `tb_roles_menus` VALUES (79, 1);
 INSERT INTO `tb_roles_menus` VALUES (1, 61);
 INSERT INTO `tb_roles_menus` VALUES (9, 61);
 INSERT INTO `tb_roles_menus` VALUES (10, 61);
@@ -561,6 +592,7 @@ INSERT INTO `tb_roles_menus` VALUES (72, 61);
 INSERT INTO `tb_roles_menus` VALUES (73, 61);
 INSERT INTO `tb_roles_menus` VALUES (74, 61);
 INSERT INTO `tb_roles_menus` VALUES (75, 61);
+INSERT INTO `tb_roles_menus` VALUES (79, 61);
 
 -- ----------------------------
 -- Table structure for tb_sale_order
@@ -608,6 +640,17 @@ CREATE TABLE `tb_sale_return_order`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Table structure for tb_search
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_search`;
+CREATE TABLE `tb_search`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sale_amount` decimal(10, 2) NOT NULL,
+  `sale_money` decimal(10, 2) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
 -- Table structure for tb_stock
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_stock`;
@@ -616,15 +659,16 @@ CREATE TABLE `tb_stock`  (
   `goods_id` int(11) NOT NULL COMMENT '货物的id',
   `price` decimal(10, 2) NOT NULL COMMENT '商品的价格',
   `amount` decimal(10, 2) NOT NULL COMMENT '商品的数量',
-  `cordon` decimal(10, 2) NULL DEFAULT NULL COMMENT '库存的警戒线',
+  `cordon` decimal(10, 2) UNSIGNED NULL DEFAULT 0.00 COMMENT '库存的警戒线',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `goodsid`(`goods_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tb_stock
 -- ----------------------------
 INSERT INTO `tb_stock` VALUES (1, 3, 15.00, 1.00, 0.00);
+INSERT INTO `tb_stock` VALUES (2, 4, 40.00, 60.00, 80.00);
 
 -- ----------------------------
 -- Table structure for tb_supplier
