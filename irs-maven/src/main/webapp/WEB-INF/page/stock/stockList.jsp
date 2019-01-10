@@ -26,10 +26,10 @@
 	<input type="hidden" id="adminId" value="<shiro:principal property='id'"/>
 	<blockquote class="layui-elem-quote list_search">
 			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal stockAdd_btn" ><i class="layui-icon">&#xe608;</i>短缺查询</a>
+				<a class="layui-btn layui-btn-danger " id="searchShortage" data-type="searchShortage" lay-filter="searchShortage"><i class="layui-icon layui-icon-search"></i>短缺查询</a>
 			</div>
 			<div class="layui-inline">
-				<a class="layui-btn layui-btn-danger batchDel"><i class="layui-icon">&#xe640;</i>超储查询</a>
+				<a class="layui-btn layui-btn-warm " id="searchStorage" data-type="searchStorage"  lay-filter="searchStorage"><i class="layui-icon layui-icon-search"></i>超储查询</a>
 			</div>
 		<div class="layui-inline">
 			<div class="layui-form-mid layui-word-aux"></div>
@@ -41,7 +41,7 @@
 	<script type="text/javascript" src="${ctx}/layui/layui.js"></script>
 	<script type="text/javascript" src="${ctx}/page/stock/stockList.js"></script>
 	<script type="text/html" id="barEdit">
-  			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  			<a class="layui-btn layui-btn-normal" lay-event="edit">编辑</a>
 	</script>
 	<style>
 	.layui-table-cell{

@@ -154,4 +154,12 @@ public class SaleOrderController {
 			return ResultUtil.error("删除出错,稍后再试！");
 		}
 	}
+
+	@SysLog(value="销售查询统计接口")
+	@RequestMapping("/queryStatistics")
+	@ResponseBody
+	public ResultUtil queryStatistics() {
+		ResultUtil saleOrders = saleOrderService.queryStatistics();
+		return saleOrders;
+	}
 }

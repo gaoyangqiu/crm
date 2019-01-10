@@ -31,15 +31,36 @@ public class StockServiceImpl implements StockService {
     @Autowired
     private TbSupplierMapper supplierMapper;
     @Override
-    public ResultUtil selectStock(Integer page, Integer limit) {
+    public ResultUtil selectStock(Integer page, Integer limit,Integer type) {
         PageHelper.startPage(page, limit);
         TbStockExample example=new TbStockExample();
         //排序
         example.setOrderByClause("id DESC");
         TbStockExample.Criteria criteria = example.createCriteria();
         List<TbStock> list = stockMapper.selectByExample(example);
-        List<StockVo> vos=converVo(list);
-        PageInfo<StockVo> pageInfo = new PageInfo<StockVo>(vos);
+        List<StockVo> vos=converVo(list, type);
+        List<StockVo> shortage=Lists.newArrayList();
+        PageInfo<StockVo> pageInfo =null;
+        if (null!=type&&1==type){
+            for (StockVo vo : vos) {
+                if(null!=vo.getCordon()&&vo.getAmount().compareTo(vo.getCordon())==-1) {
+                    vo.setCordonStatus(0);
+                    shortage.add(vo);
+                }
+            }
+            pageInfo=new PageInfo<StockVo>(shortage);
+        }else if(null!=type&&2==type){
+            for (StockVo vo : vos) {
+                if(null!=vo.getCordon()&&vo.getAmount().compareTo(vo.getCordon())==-1) {
+                    vo.setCordonStatus(2);
+                    shortage.add(vo);
+                }
+            }
+            pageInfo=new PageInfo<StockVo>(shortage);
+        }else {
+            pageInfo=new PageInfo<StockVo>(vos);
+        }
+
         ResultUtil resultUtil = new ResultUtil();
         resultUtil.setCode(0);
         resultUtil.setCount(pageInfo.getTotal());
@@ -52,14 +73,14 @@ public class StockServiceImpl implements StockService {
      * @param list
      * @return
      */
-    private List<StockVo> converVo(List<TbStock> list) {
+    private List<StockVo> converVo(List<TbStock> list,Integer type) {
         List<StockVo> vos = Lists.newArrayList();
         for (TbStock stock : list) {
             StockVo vo=new StockVo();
             TbGoods goods=goodsMapper.selectByPrimaryKey(stock.getGoodsId());
             //设置警戒状态
             //大于警戒值
-            if (null!=stock.getCordon()&&stock.getAmount().compareTo(stock.getCordon())==1){
+/*            if (null!=stock.getCordon()&&stock.getAmount().compareTo(stock.getCordon())==1){
                 vo.setCordonStatus(2);
                 //小于警戒值
             }else if(null!=stock.getCordon()&&stock.getAmount().compareTo(stock.getCordon())==-1){
@@ -67,7 +88,7 @@ public class StockServiceImpl implements StockService {
                 //等于警戒值
             }else if (null!=stock.getCordon()&&stock.getAmount().compareTo(stock.getCordon())==0){
                 vo.setCordonStatus(1);
-            }
+            }*/
             BeanUtils.copyProperties(stock,vo);
             TbGoodsType goodsType=goodsTypeMapper.selectByPrimaryKey(goods.getGoodsType());
             TbSupplier supplier=supplierMapper.selectByPrimaryKey(goods.getSuppliersId());
@@ -113,6 +134,29 @@ public class StockServiceImpl implements StockService {
         goods.setId(stock.getGoodsId());
         goods.setPrice(stock.getPrice());
         goodsMapper.updateByPrimaryKeySelective(goods);
-        stockMapper.updateByPrimaryKeySelective(stock);
+    }
+
+    @Override
+    public ResultUtil searchShortage(Integer page, Integer limit) {
+        PageHelper.startPage(page, limit);
+        TbStockExample example=new TbStockExample();
+        //排序
+        example.setOrderByClause("id DESC");
+        TbStockExample.Criteria criteria = example.createCriteria();
+        List<TbStock> list = stockMapper.selectByExample(example);
+        List<StockVo> vos=converVo(list,null);
+        List<StockVo> shortage=Lists.newArrayList();
+        for (StockVo vo : vos) {
+            if(null!=vo.getCordon()&&vo.getAmount().compareTo(vo.getCordon())==-1) {
+                vo.setCordonStatus(0);
+                shortage.add(vo);
+            }
+        }
+        PageInfo<StockVo> pageInfo = new PageInfo<StockVo>(shortage);
+        ResultUtil resultUtil = new ResultUtil();
+        resultUtil.setCode(0);
+        resultUtil.setCount(pageInfo.getTotal());
+        resultUtil.setData(pageInfo.getList());
+        return resultUtil;
     }
 }

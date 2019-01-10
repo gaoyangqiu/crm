@@ -17,4 +17,6 @@ public interface SaleOrderService {
     TbSaleOrder selectSaleOrderById(Integer id);
 
     void updateSaleOrder(TbSaleOrder saleOrder);
+
+    ResultUtil queryStatistics();
 }

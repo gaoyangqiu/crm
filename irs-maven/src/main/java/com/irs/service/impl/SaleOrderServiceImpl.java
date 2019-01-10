@@ -1,6 +1,7 @@
 package com.irs.service.impl;
 
 import com.beust.jcommander.internal.Lists;
+import com.beust.jcommander.internal.Maps;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.irs.mapper.*;
@@ -15,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class SaleOrderServiceImpl implements SaleOrderService {
@@ -120,5 +121,42 @@ public class SaleOrderServiceImpl implements SaleOrderService {
     @Override
     public void updateSaleOrder(TbSaleOrder saleOrder) {
         saleOrderMapper.updateByPrimaryKeySelective(saleOrder);
+    }
+
+    @Override
+    public ResultUtil queryStatistics() {
+/*        TbSaleOrderExample example=new TbSaleOrderExample();
+        //排序
+        example.setOrderByClause("id DESC");
+        List<TbSaleOrder> list = saleOrderMapper.selectByExample(example);
+        if (CollectionUtils.isEmpty(list)){
+            return null;
+        }
+        //查询出来的list根据销售额排序
+        Collections.sort(list, new Comparator<TbSaleOrder>() {
+            @Override
+            public int compare(TbSaleOrder o1, TbSaleOrder o2) {
+                return o2.getSalePrice().multiply(new BigDecimal(o2.getAmount())).subtract(o1.getSalePrice().multiply(new BigDecimal(o1.getAmount()))).intValue();
+            }
+        });
+        List<SaleOrderVo> converVos=converVo(list);
+        if (CollectionUtils.isEmpty(converVos)){
+            return null;
+        }
+        //组装柱状图的数据
+        List<String> xAxis=Lists.newArrayList();
+        List<BigDecimal> datas=Lists.newArrayList();
+        for (SaleOrderVo converVo : converVos) {
+            xAxis.add(converVo.getGoodsName());
+            datas.add(converVo.getSalePrice().multiply(new BigDecimal(converVo.getAmount())));
+        }
+        Map map=Maps.newHashMap();
+        map.put("xAxis",xAxis);
+        map.put("datas",datas);
+        ResultUtil resultUtil = new ResultUtil();
+        resultUtil.setCode(0);
+        resultUtil.setData(map);
+        return resultUtil;*/
+        return null;
     }
 }

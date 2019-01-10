@@ -11,6 +11,7 @@ import com.irs.pojo.*;
 import com.irs.service.GoodsService;
 import com.irs.util.ResultUtil;
 import com.irs.vo.GoodsVo;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,7 +84,20 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Override
     public void deleteGoodsById(Integer id) {
+
         goodsMapper.deleteByPrimaryKey(id);
+        //删除货物的时候删除对应的库存
+        TbStockExample stockExample=new TbStockExample();
+        TbStockExample.Criteria criteria=stockExample.createCriteria();
+        criteria.andGoodsIdEqualTo(id);
+        //根据采购单的商品id查询到对应的库存
+        List<TbStock> stocks=stockMapper.selectByExample(stockExample);
+        //数据库设置的库存的goodsId为唯一,一个商品对应一条库存记录,所以直接get0
+        if (CollectionUtils.isNotEmpty(stocks)){
+            TbStock stock= stocks.get(0);
+         //删除库存
+            stockMapper.deleteByPrimaryKey(stock.getId());
+        }
     }
 
     @Override
@@ -92,6 +106,18 @@ public class GoodsServiceImpl implements GoodsService {
             String[] ids=goodsIds.split(",");
             for (String id : ids) {
                 goodsMapper.deleteByPrimaryKey(Integer.parseInt(id));
+                //删除货物的时候删除对应的库存
+                TbStockExample stockExample=new TbStockExample();
+                TbStockExample.Criteria criteria=stockExample.createCriteria();
+                criteria.andGoodsIdEqualTo(Integer.parseInt(id));
+                //根据采购单的商品id查询到对应的库存
+                List<TbStock> stocks=stockMapper.selectByExample(stockExample);
+                //数据库设置的库存的goodsId为唯一,一个商品对应一条库存记录,所以直接get0
+                if (CollectionUtils.isNotEmpty(stocks)){
+                    TbStock stock= stocks.get(0);
+                    //删除库存
+                    stockMapper.deleteByPrimaryKey(stock.getId());
+                }
             }
         }
     }

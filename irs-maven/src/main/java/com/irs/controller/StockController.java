@@ -31,8 +31,8 @@ public class StockController {
 
 	@RequestMapping("/list")
 	@ResponseBody
-	public ResultUtil getStockList(Integer page,Integer limit) {
-		ResultUtil stock = stockService.selectStock(page, limit);
+	public ResultUtil getStockList(Integer page,Integer limit,Integer type) {
+		ResultUtil stock = stockService.selectStock(page, limit ,type);
 		return stock;
 	}
 
@@ -55,6 +55,25 @@ public class StockController {
 	public ResultUtil updateStock(TbStock stock) {
 		try {
 			stockService.updateStock(stock);
+			return ResultUtil.ok();
+		} catch (Exception e) {
+			return ResultUtil.error("删除出错,稍后再试！");
+		}
+	}
+
+
+
+	/**
+	 * 库存
+	 * @param page
+	 * @return
+	 */
+	@SysLog(value="短缺查询")
+	@RequestMapping("/searchShortage")
+	@ResponseBody
+	public ResultUtil searchShortage(Integer page,Integer limit) {
+		try {
+			ResultUtil stock = stockService.searchShortage(page, limit);
 			return ResultUtil.ok();
 		} catch (Exception e) {
 			return ResultUtil.error("删除出错,稍后再试！");
