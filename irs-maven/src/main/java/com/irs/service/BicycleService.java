@@ -1,8 +1,8 @@
 package com.irs.service;
 
-import com.carrental.shopping.service.vo.BicycleTypeVo;
-import com.carrental.shopping.vo.BicycleEditVo;
-import com.carrental.shopping.vo.BicycleVo;
+import com.irs.pojo.TbBicycle;
+import com.irs.util.ResultUtil;
+import com.irs.vo.BicycleTypeVo;
 
 import java.util.List;
 
@@ -14,14 +14,20 @@ import java.util.List;
 
 public interface BicycleService {
 
-    List<BicycleVo> bicycleList();
 
-    void deleteBicycle(Integer id);
 
-    void editBicycle(BicycleEditVo editVo);
+    TbBicycle selectBicycleById(Integer id);
 
-    void addBicycle(BicycleEditVo editVo);
+    void updateSupplie(TbBicycle bicycle);
+
+    void deleteSuppliesByIds(String supplierStr);
+
+    void deleteSupplieById(Integer id);
+
+    void addBicycle(TbBicycle bicycle);
+
+    ResultUtil selectBicycles(Integer page, Integer limit);
+
 
     List<BicycleTypeVo> bicycleType();
-
 }

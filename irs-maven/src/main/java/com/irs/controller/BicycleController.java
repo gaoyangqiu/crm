@@ -2,13 +2,16 @@ package com.irs.controller;
 
 
 import com.irs.annotation.SysLog;
+import com.irs.pojo.TbBicycle;
 import com.irs.pojo.TbSupplier;
 import com.irs.service.BicycleService;
 import com.irs.util.ResultUtil;
 import com.irs.vo.BicycleEditVo;
+import com.irs.vo.BicycleTypeVo;
 import com.irs.vo.BicycleVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +26,7 @@ import java.util.List;
  */
 
 @Controller
+@RequestMapping("bicycle")
 public class BicycleController {
 
     @Autowired
@@ -35,36 +39,40 @@ public class BicycleController {
 
 
     @RequestMapping("/addbicycle")
-    public String addSupplier() {
+    public String addSupplier(Model model) {
+        List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
+        model.addAttribute("bicycleTypeVos",bicycleTypeVos);
         return "page/bicycle/addbicycle";
     }
 
 
     @RequestMapping("/editSupplier")
     public String editSupplier(Integer id,Model model) {
-        TbSupplier supplier=supplierService.selectSupplieById(id);
-        model.addAttribute("supplier",supplier);
-        return "page/supplier/editsupplier";
+        TbBicycle bicycle=bicycleService.selectBicycleById(id);
+        List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
+        model.addAttribute("bicycle",bicycle);
+        model.addAttribute("bicycleTypeVos",bicycleTypeVos);
+        return "page/bicycle/editsupplier";
     }
 
     @RequestMapping("/list")
     @ResponseBody
     public ResultUtil getSupplierList(Integer page,Integer limit) {
-        ResultUtil suppliers = supplierService.selectSupplies(page, limit);
+        ResultUtil suppliers = bicycleService.selectBicycles(page, limit);
         return suppliers;
     }
 
     /**
      * 添加供应商信息
-     * @param supplier
+     * @param bicycle
      * @return
      */
     @SysLog(value="添加供应商信息")
     @RequestMapping("/save")
     @ResponseBody
-    public ResultUtil insSupplier(TbSupplier supplier) {
+    public ResultUtil insSupplier(TbBicycle bicycle) {
         try {
-            supplierService.addSupplie(supplier);
+            bicycleService.addBicycle(bicycle);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("添加出错,稍后再试！");
@@ -82,7 +90,7 @@ public class BicycleController {
     @ResponseBody
     public ResultUtil delSupplierById(Integer id) {
         try {
-            supplierService.deleteSupplieById(id);
+            bicycleService.deleteSupplieById(id);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("修改出错,稍后再试！");
@@ -99,7 +107,7 @@ public class BicycleController {
     @ResponseBody
     public ResultUtil delSupplier(String supplierStr) {
         try {
-            supplierService.deleteSuppliesByIds(supplierStr);
+            bicycleService.deleteSuppliesByIds(supplierStr);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("删除出错,稍后再试！");
@@ -108,15 +116,16 @@ public class BicycleController {
 
     /**
      * 供应商信息
-     * @param supplier
+     * @param bicycle
      * @return
      */
     @SysLog(value="更新供应商信息")
     @RequestMapping("/update")
     @ResponseBody
-    public ResultUtil updateSupplier(TbSupplier supplier) {
+    public ResultUtil updateSupplier(TbBicycle bicycle) {
         try {
-            supplierService.updateSupplie(supplier);
+
+            bicycleService.updateSupplie(bicycle);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("删除出错,稍后再试！");

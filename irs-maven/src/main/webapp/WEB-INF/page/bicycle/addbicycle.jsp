@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加商品</title>
+<title>添加单车</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -36,92 +36,66 @@
 <body class="childrenBody">
 	<form class="layui-form" style="width: 80%;" id="aaf">
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品名称</label>
+			<label class="layui-form-label">单车名称</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					lay-verify="required" placeholder="请输入商品名称" name="name" value="">
+					lay-verify="required" placeholder="请输入单车名称" name="name" value="">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品规格</label>
+			<label class="layui-form-label">单车编号</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					    placeholder="请输入商品规格" name="specifications" value="">
+					    placeholder="请输入单车编号" name="number" value="">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品类型</label>
+			<label class="layui-form-label">单车类型</label>
 			<div class="layui-input-block">
-				<select name="goodsType" lay-filter="aihao" lay-verify="required">
-				<c:forEach items="${goodsTypes}" var="var" varStatus="vs">
+				<select name="bicycleType" lay-filter="aihao" lay-verify="required">
+				<c:forEach items="${bicycleTypeVos}" var="var" varStatus="vs">
 					<option value="${var.id}"  > ${var.name}</option>
 				</c:forEach>
 				</select>
 			</div>
 		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">供应商</label>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单车价格</label>
+            <div class="layui-input-block">
+                <input type="text" name="price" class="layui-input userName"
+                       placeholder="请输入单车价格" value="">
+            </div>
+        </div>
+<%--		<div class="layui-form-item">
+			<label class="layui-form-label">单车状态</label>
 			<div class="layui-input-block">
-				<select name="suppliersId" lay-filter="aihao" lay-verify="required">
+				<select name="status" lay-filter="aihao" lay-verify="required">
 					<c:forEach items="${suppliers}" var="var" varStatus="vs">
 						<option value="${var.id}"  > ${var.name}</option>
 					</c:forEach>
 				</select>
 			</div>
-		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品批号</label>
-			<div class="layui-input-block">
-				<input type="text" name="batchNumber" class="layui-input userName"
-					 placeholder="请输入商品批号" value="">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品批准文号</label>
-			<div class="layui-input-block">
-				<input type="text" name="approvalNumber" class="layui-input userName"
-					   placeholder="请输入商品批准文号" value="">
-			</div>
-		</div>
-
+		</div>--%>
 
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品产地</label>
-			<div class="layui-input-block">
-				<input type="text" name="home" class="layui-input userName"
-					    placeholder="请输入商品产地" value="">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品价格</label>
+			<label class="layui-form-label">单车价格</label>
 			<div class="layui-input-block">
 				<input type="text" name="price" class="layui-input userName"
-					    placeholder="请输入商品价格" value="">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品包装</label>
-			<div class="layui-input-block">
-				<input type="text" name="packing" class="layui-input userName"
-					  placeholder="请输入商品包装" value="">
+					    placeholder="请输入单车价格" value="">
 			</div>
 		</div>
 
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="addGoods">立即提交</button>
+				<button class="layui-btn" lay-submit="" lay-filter="addbicycle">立即提交</button>
 			</div>
 		</div>
 	</form>
 	<script type="text/javascript" src="${ctx }/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx }/page/goods/addgoods.js"></script>
+	<script type="text/javascript" src="${ctx }/page/bicycle/addbicycle.js"></script>
 </body>
 </html>
