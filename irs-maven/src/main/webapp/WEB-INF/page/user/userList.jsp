@@ -229,6 +229,10 @@
 													title : '手机',
 													width : 120
 												},
+                                            {
+                                                field : 'balance',
+                                                title : '余额',
+                                            },
 												{
 													field : 'status',
 													title : '状态',

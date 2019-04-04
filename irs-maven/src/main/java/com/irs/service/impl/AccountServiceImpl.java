@@ -2,12 +2,12 @@ package com.irs.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.irs.mapper.TbUsersMapper;
 import com.irs.pojo.TbUsers;
 import com.irs.pojo.TbUsersExample;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.irs.pojo.TbUsersExample.Criteria;
 import com.irs.service.AccountService;
 
@@ -18,7 +18,7 @@ public class AccountServiceImpl implements AccountService {
 	private TbUsersMapper tbUsersMapper;
 
 	@Override
-	public TbUsers selUserByCodeAndStatus(String eCode,String status) {
+	public TbUsers selUserByCodeAndStatus(String eCode, String status) {
 		TbUsersExample example=new TbUsersExample();
 		Criteria criteria = example.createCriteria();
 		criteria.andECodeEqualTo(eCode);

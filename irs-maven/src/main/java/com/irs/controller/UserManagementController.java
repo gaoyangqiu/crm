@@ -1,5 +1,6 @@
 package com.irs.controller;
 
+import com.irs.pojo.TbUsers;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.irs.annotation.SysLog;
-import com.irs.pojo.TbUsers;
 import com.irs.pojo.UserSearch;
 import com.irs.service.UserService;
 import com.irs.util.ResultUtil;

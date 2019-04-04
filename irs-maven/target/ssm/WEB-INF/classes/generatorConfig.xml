@@ -6,7 +6,7 @@
 <generatorConfiguration>
 
     <!-- mysql驱动的位置 -->
-    <classPathEntry location="D:\repo\mysql\mysql-connector-java\5.1.36\mysql-connector-java-5.1.36.jar" />
+    <classPathEntry location="E:\m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
 
     <context id="Tables" targetRuntime="MyBatis3">
 
@@ -58,7 +58,7 @@
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类 -->
 
-        <table schema="tb_bicycle" tableName="tb_bicycle">
+        <table schema="tb_users" tableName="tb_users">
         </table>
     </context>
 </generatorConfiguration>

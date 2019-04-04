@@ -6,7 +6,7 @@ import com.irs.util.ResultUtil;
 
 public interface UserService {
 	//用户邮箱唯一性检验
-	public TbUsers selUserByEmail(String eMail,Long uid);
+	public TbUsers selUserByEmail(String eMail, Long uid);
 
 	//用户昵称唯一性检验
 	public TbUsers selUserByNickname(String nickname,Long uid);

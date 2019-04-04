@@ -2,11 +2,11 @@ package com.irs.service.test;
 
 import java.util.Date;
 
+import com.irs.pojo.TbUsers;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 
-import com.irs.pojo.TbUsers;
 import com.irs.pojo.UserSearch;
 import com.irs.service.BaseTest;
 import com.irs.service.UserService;
@@ -23,7 +23,7 @@ public class UserTest extends BaseTest {
 			System.out.println(user.getAddress());
 		}
 	}
-	
+/*
 	@Test
 	@Rollback(false) //默认true：成功也回滚，false失败回滚，成功提交
 	public void insert(){
@@ -42,7 +42,7 @@ public class UserTest extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	@Test
 	public void findList(){

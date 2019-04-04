@@ -9,5 +9,8 @@
         <module name="irs_maven" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="irs_maven" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -10,6 +10,7 @@
     <result column="birthday" property="birthday" jdbcType="DATE" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="balance" property="balance" jdbcType="INTEGER" />
     <result column="e_code" property="eCode" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -73,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    uid, e_mail, nickname, password, sex, birthday, address, phone, e_code, status, create_time
+    uid, e_mail, nickname, password, sex, birthday, address, phone, balance, e_code, 
+    status, create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.irs.pojo.TbUsersExample" >
     select
@@ -108,12 +110,14 @@
   <insert id="insert" parameterType="com.irs.pojo.TbUsers" >
     insert into tb_users (uid, e_mail, nickname, 
       password, sex, birthday, 
-      address, phone, e_code, 
-      status, create_time)
+      address, phone, balance, 
+      e_code, status, create_time
+      )
     values (#{uid,jdbcType=BIGINT}, #{eMail,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
-      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{eCode,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{balance,jdbcType=INTEGER}, 
+      #{eCode,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.irs.pojo.TbUsers" >
     insert into tb_users
@@ -141,6 +145,9 @@
       </if>
       <if test="phone != null" >
         phone,
+      </if>
+      <if test="balance != null" >
+        balance,
       </if>
       <if test="eCode != null" >
         e_code,
@@ -176,6 +183,9 @@
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=INTEGER},
       </if>
       <if test="eCode != null" >
         #{eCode,jdbcType=VARCHAR},
@@ -221,6 +231,9 @@
       <if test="record.phone != null" >
         phone = #{record.phone,jdbcType=VARCHAR},
       </if>
+      <if test="record.balance != null" >
+        balance = #{record.balance,jdbcType=INTEGER},
+      </if>
       <if test="record.eCode != null" >
         e_code = #{record.eCode,jdbcType=VARCHAR},
       </if>
@@ -245,6 +258,7 @@
       birthday = #{record.birthday,jdbcType=DATE},
       address = #{record.address,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
+      balance = #{record.balance,jdbcType=INTEGER},
       e_code = #{record.eCode,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP}
@@ -276,6 +290,9 @@
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=INTEGER},
+      </if>
       <if test="eCode != null" >
         e_code = #{eCode,jdbcType=VARCHAR},
       </if>
@@ -297,6 +314,7 @@
       birthday = #{birthday,jdbcType=DATE},
       address = #{address,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=INTEGER},
       e_code = #{eCode,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}

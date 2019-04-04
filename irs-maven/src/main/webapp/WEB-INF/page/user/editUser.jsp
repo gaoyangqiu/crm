@@ -89,6 +89,13 @@
 					lay-verify="phone" placeholder="请输入手机号" value="${user.phone }">
 			</div>
 		</div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">余额</label>
+                <div class="layui-input-block">
+                    <input type="text" name="balance" class="layui-input userName"
+                           lay-verify="balance" placeholder="请输入余额" value="${user.balance }">
+                </div>
+            </div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户状态</label>
 			<div class="layui-input-block">

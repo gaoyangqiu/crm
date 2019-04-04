@@ -1,24 +1,23 @@
 package com.irs.service.impl;
 
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.util.DigestUtils;
-
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.irs.mapper.TbUsersMapper;
 import com.irs.pojo.TbUsers;
 import com.irs.pojo.TbUsersExample;
-import com.irs.pojo.UserSearch;
 import com.irs.pojo.TbUsersExample.Criteria;
+import com.irs.pojo.UserSearch;
 import com.irs.service.UserService;
 import com.irs.util.EmailUtil;
 import com.irs.util.GlobalUtil;
 import com.irs.util.MyUtil;
 import com.irs.util.ResultUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
+
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	private TbUsersMapper tbUsersMapper;
 	
 	@Override
-	public TbUsers selUserByEmail(String eMail,Long uid) {
+	public TbUsers selUserByEmail(String eMail, Long uid) {
 		TbUsersExample example=new TbUsersExample();
 		Criteria criteria = example.createCriteria();
 		criteria.andEMailEqualTo(eMail);

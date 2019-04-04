@@ -2,13 +2,13 @@ package com.irs.service.impl;
 
 import java.util.List;
 
+import com.irs.mapper.TbUsersMapper;
+import com.irs.pojo.TbUsers;
+import com.irs.pojo.TbUsersExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.irs.mapper.MainMapper;
-import com.irs.mapper.TbUsersMapper;
-import com.irs.pojo.TbUsers;
-import com.irs.pojo.TbUsersExample;
 import com.irs.pojo.TbUsersExample.Criteria;
 import com.irs.service.MainService;
 @Service

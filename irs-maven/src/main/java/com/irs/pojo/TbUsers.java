@@ -13,11 +13,13 @@ public class TbUsers {
 
     private String sex;
 
-    private String birthday;
+    private Date birthday;
 
     private String address;
 
     private String phone;
+
+    private Integer balance;
 
     private String eCode;
 
@@ -65,15 +67,15 @@ public class TbUsers {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public String getBirthday() {
-		return birthday;
-	}
+    public Date getBirthday() {
+        return birthday;
+    }
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
-	public String getAddress() {
+    public String getAddress() {
         return address;
     }
 
@@ -87,6 +89,14 @@ public class TbUsers {
 
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
+    }
+
+    public Integer getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
     }
 
     public String geteCode() {
@@ -112,12 +122,4 @@ public class TbUsers {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-
-	@Override
-	public String toString() {
-		return "TbUsers [uid=" + uid + ", eMail=" + eMail + ", nickname=" + nickname + ", sex=" + sex + ", birthday="
-				+ birthday + ", address=" + address + ", phone=" + phone + ", eCode=" + eCode + ", status=" + status
-				+ ", createTime=" + createTime + "]";
-	}
-    
 }
