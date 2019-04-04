@@ -3,7 +3,7 @@ package com.irs.controller;
 
 import com.irs.annotation.SysLog;
 import com.irs.pojo.TbBicycle;
-import com.irs.pojo.TbSupplier;
+import com.irs.pojo.TbBicycle;
 import com.irs.service.BicycleService;
 import com.irs.util.ResultUtil;
 import com.irs.vo.BicycleEditVo;
@@ -33,33 +33,33 @@ public class BicycleController {
     private BicycleService bicycleService;
 
     @RequestMapping("/bicycleList")
-    public String supplierList() {
+    public String bicycleList() {
         return "page/bicycle/bicycleList";
     }
 
 
-    @RequestMapping("/addbicycle")
-    public String addSupplier(Model model) {
+    @RequestMapping("/addBicycle")
+    public String addBicycle(Model model) {
         List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
         model.addAttribute("bicycleTypeVos",bicycleTypeVos);
         return "page/bicycle/addbicycle";
     }
 
 
-    @RequestMapping("/editSupplier")
-    public String editSupplier(Integer id,Model model) {
+    @RequestMapping("/editBicycle")
+    public String editBicycle(Integer id,Model model) {
         TbBicycle bicycle=bicycleService.selectBicycleById(id);
         List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
         model.addAttribute("bicycle",bicycle);
         model.addAttribute("bicycleTypeVos",bicycleTypeVos);
-        return "page/bicycle/editsupplier";
+        return "page/bicycle/editbicycle";
     }
 
     @RequestMapping("/list")
     @ResponseBody
-    public ResultUtil getSupplierList(Integer page,Integer limit) {
-        ResultUtil suppliers = bicycleService.selectBicycles(page, limit);
-        return suppliers;
+    public ResultUtil getBicycleList(Integer page,Integer limit) {
+        ResultUtil bicycles = bicycleService.selectBicycles(page, limit);
+        return bicycles;
     }
 
     /**
@@ -70,7 +70,7 @@ public class BicycleController {
     @SysLog(value="添加供应商信息")
     @RequestMapping("/save")
     @ResponseBody
-    public ResultUtil insSupplier(TbBicycle bicycle) {
+    public ResultUtil insBicycle(TbBicycle bicycle) {
         try {
             bicycleService.addBicycle(bicycle);
             return ResultUtil.ok();
@@ -88,7 +88,7 @@ public class BicycleController {
     @SysLog(value="删除供应商信息")
     @RequestMapping("/delete")
     @ResponseBody
-    public ResultUtil delSupplierById(Integer id) {
+    public ResultUtil delBicycleById(Integer id) {
         try {
             bicycleService.deleteSupplieById(id);
             return ResultUtil.ok();
@@ -99,15 +99,15 @@ public class BicycleController {
 
     /**
      * 批量删除供应商信息
-     * @param supplierStr
+     * @param bicycleStr
      * @return
      */
     @SysLog(value="批量删除供应商信息")
     @RequestMapping("/deletes")
     @ResponseBody
-    public ResultUtil delSupplier(String supplierStr) {
+    public ResultUtil delBicycle(String bicycleStr) {
         try {
-            bicycleService.deleteSuppliesByIds(supplierStr);
+            bicycleService.deleteSuppliesByIds(bicycleStr);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("删除出错,稍后再试！");
@@ -122,7 +122,7 @@ public class BicycleController {
     @SysLog(value="更新供应商信息")
     @RequestMapping("/update")
     @ResponseBody
-    public ResultUtil updateSupplier(TbBicycle bicycle) {
+    public ResultUtil updateBicycle(TbBicycle bicycle) {
         try {
 
             bicycleService.updateSupplie(bicycle);

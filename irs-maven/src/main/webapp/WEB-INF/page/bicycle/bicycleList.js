@@ -7,25 +7,20 @@ layui.config({
 		$ = layui.jquery;
 		//数据表格
 		table.render({
-			id:'goodsList',
-		    elem: '#goodsList'
-		    ,url: ctx+'/goods/list' //数据接口
+			id:'bicycleList',
+		    elem: '#bicycleList'
+		    ,url: ctx+'/bicycle/list' //数据接口
 		    ,cellMinWidth: 80
 		    ,limit:10//每页默认数
 		    ,limits:[10,20,30,40]
 		    ,cols: [[ //表头
               {type:'checkbox'}
               ,{field:'id', title: 'ID', sort: true}
-/*              ,{field:'goodsType', title: '轮播图',templet:'#tableImg'}*/
-				,{field:'name', title: '商品名称'}
-                ,{field:'goodsTypeName', title: '类型'}
-                ,{field:'supplierName', title: '供应商'}
-              ,{field:'specifications', title: '规格'}
-              ,{field:'batchNumber', title: '批号'}
-              ,{field:'approvalNumber', title: '批准文号'}
-              ,{field:'home', title: '产地'}
-                ,{field:'price', title: '价格'}
-                ,{field:'packing', title: '包装'}
+/*              ,{field:'bicycleType', title: '轮播图',templet:'#tableImg'}*/
+				,{field:'name', title: '单车名称'}
+                ,{field:'number', title: '单车编号'}
+                ,{field:'price', title: '单车价格'}
+              ,{field:'typeName', title: '单车类型'}
               ,{title: '操作',toolbar: '#barEdit'}
 		    ]]
 				,page: true //开启分页
@@ -36,11 +31,11 @@ layui.config({
 		    if(obj.event === 'del'){
 		      layer.confirm('真的删除行么?', function(index){
 		    	  $.ajax({
-		    		  url:ctx+'/goods/delete?id='+data.id,
+		    		  url:ctx+'/bicycle/delete?id='+data.id,
 		    		  type : "get",
 		    		  success : function(d){
 		    			  if(d.code==0){
-		    				  table.reload('goodsList', {})
+		    				  table.reload('bicycleList', {})
 		    			  }else{
 		    				  layer.msg("权限不足，联系超管！",{icon: 5});
 		    			  }
@@ -51,20 +46,20 @@ layui.config({
 		    } else if(obj.event === 'edit'){
 		      layer.open({
 		    	  type: 2,
-		    	  title:"编辑商品",
+		    	  title:"编辑单车",
 		    	  area: ['380px', '460px'],
-		    	  content:ctx+"/goods/editGoods?id="+data.id //这里content是一个普通的String
+		    	  content:ctx+"/bicycle/editBicycle?id="+data.id //这里content是一个普通的String
 		      })
 		    }
 		  });
 
 	//添加角色
-	$(".goodsAdd_btn").click(function(){
+	$(".bicycleAdd_btn").click(function(){
 		layer.open({
 	    	  type: 2,
-	    	  title:"添加商品",
+	    	  title:"添加单车",
 	    	  area: ['380px', '460px'],
-	    	  content:ctx+"/goods/addGoods", //这里content是一个普通的String
+	    	  content:ctx+"/bicycle/addBicycle", //这里content是一个普通的String
 	      })
 	})
 
@@ -72,23 +67,23 @@ layui.config({
 	
 	//批量删除角色
 	$(".batchDel").click(function(){
-		var checkStatus = table.checkStatus('goodsList')
-	      ,data = checkStatus.data,goodsStr='';
+		var checkStatus = table.checkStatus('bicycleList')
+	      ,data = checkStatus.data,bicycleStr='';
 //	      layer.alert(JSON.stringify(data));
 		if(data.length>0){
 			$.each(data, function (n, value) {
-                goodsStr+=value.id+',';
+                bicycleStr+=value.id+',';
 	          });
-            goodsStr=goodsStr.substring(0,goodsStr.length-1);
+            bicycleStr=bicycleStr.substring(0,bicycleStr.length-1);
 			  layer.confirm('真的要删除<strong>'+data.length+'</strong>条数据吗？', function(index){
 				//调用删除接口
 				  $.ajax({
-			    		  url:'deletes?goodsStr='+goodsStr,//接口地址
+			    		  url:'deletes?bicycleStr='+bicycleStr,//接口地址
 			    		  type : "get",
 			    		  success : function(d){
 			    			  if(d.code==0){
 			    				//重载表格
-                                  table.reload('goodsList', {})
+                                  table.reload('bicycleList', {})
 			    				  //删除成功，刷新父页面
 			    				  //parent.location.reload();
 			    			  }else{

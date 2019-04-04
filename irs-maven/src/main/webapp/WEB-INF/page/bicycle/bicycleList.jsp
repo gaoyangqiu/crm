@@ -25,32 +25,24 @@
 <body class="childrenBody">
 	<input type="hidden" id="adminId" value="<shiro:principal property='id'"/>
 	<blockquote class="layui-elem-quote list_search">
-		<shiro:hasPermission name="goods:goods:save">
 			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal goodsAdd_btn" ><i class="layui-icon">&#xe608;</i>   添加商品</a>
+				<a class="layui-btn layui-btn-normal bicycleAdd_btn" ><i class="layui-icon">&#xe608;</i>   添加商品</a>
 			</div>
-		</shiro:hasPermission>
-		<shiro:hasPermission name="goods:goods:delete">
 			<div class="layui-inline">
 				<a class="layui-btn layui-btn-danger batchDel"><i class="layui-icon">&#xe640;</i>批量删除</a>
 			</div>
-		</shiro:hasPermission>
 		<div class="layui-inline">
 			<div class="layui-form-mid layui-word-aux"></div>
 		</div>
 	</blockquote>
 	<!-- 数据表格 -->
-	<table id="goodsList" lay-filter="test"></table>
+	<table id="bicycleList" lay-filter="test"></table>
 	
 	<script type="text/javascript" src="${ctx}/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx}/page/goods/goodsList.js"></script>
+	<script type="text/javascript" src="${ctx}/page/bicycle/bicycleList.js"></script>
 	<script type="text/html" id="barEdit">
-		<shiro:hasPermission name="goods:goods:update">
   			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-		</shiro:hasPermission>
-		<shiro:hasPermission name="goods:goods:delete">
   			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-		</shiro:hasPermission>
 	</script>
 	<style>
 	.layui-table-cell{

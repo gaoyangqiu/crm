@@ -35,92 +35,49 @@
 </head>
 <body class="childrenBody">
 	<form class="layui-form" style="width: 80%;" id="aaf">
-	<input type="hidden" name="id" value="${goods.id }"/>
+	<input type="hidden" name="id" value="${bicycle.id }"/>
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品名称</label>
+			<label class="layui-form-label">单车名称</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					   lay-verify="required" placeholder="请输入商品名称" name="name" value="${goods.name }">
+					   lay-verify="required" placeholder="请输入单车名称" name="name" value="${bicycle.name }">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品规格</label>
+			<label class="layui-form-label">单车编号</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
-					   placeholder="请输入商品规格" name="specifications" value="${goods.specifications }">
+					   placeholder="请输入单车规格" name="number" value="${bicycle.number }">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品批号</label>
-			<div class="layui-input-block">
-				<input type="text" name="batchNumber" class="layui-input userName"
-					   placeholder="请输入商品批号" value="${goods.batchNumber }">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品类型</label>
-			<div class="layui-input-block">
-				<select name="goodsType" lay-filter="aihao">
-					<c:forEach items="${goodsTypes}" var="var" varStatus="vs">
-						<option value="${var.id}"    <c:if test="${var.id==goods.goodsType}">selected</c:if>> ${var.name}</option>
-					</c:forEach>
-				</select>
-			</div>
-		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">供应商</label>
-			<div class="layui-input-block">
-				<select name="suppliersId" lay-filter="aihao" lay-verify="required">
-					<c:forEach items="${suppliers}" var="var" varStatus="vs">
-						<option value="${var.id}"  <c:if test="${var.id==goods.suppliersId}">selected</c:if> > ${var.name}</option>
-					</c:forEach>
-				</select>
-			</div>
-		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品批准文号</label>
-			<div class="layui-input-block">
-				<input type="text" name="approvalNumber" class="layui-input userName"
-					   placeholder="请输入商品批准文号" value="${goods.approvalNumber }">
-			</div>
-		</div>
-
-
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品产地</label>
-			<div class="layui-input-block">
-				<input type="text" name="home" class="layui-input userName"
-					   placeholder="请输入商品产地" value="${goods.home }">
-			</div>
-		</div>
-
-		<div class="layui-form-item">
-			<label class="layui-form-label">商品价格</label>
+			<label class="layui-form-label">单车价格</label>
 			<div class="layui-input-block">
 				<input type="text" name="price" class="layui-input userName"
-					   placeholder="请输入商品价格" value="${goods.price }">
+					   placeholder="请输入单车批号" value="${bicycle.price }">
 			</div>
 		</div>
 
 		<div class="layui-form-item">
-			<label class="layui-form-label">商品包装</label>
+			<label class="layui-form-label">单车类型</label>
 			<div class="layui-input-block">
-				<input type="text" name="packing" class="layui-input userName"
-					   placeholder="请输入商品包装" value="${goods.packing }">
+				<select name="type" lay-filter="aihao">
+					<c:forEach items="${bicycleTypeVos}" var="var" varStatus="vs">
+						<option value="${var.id}"    <c:if test="${var.id==bicycle.type}">selected</c:if>> ${var.name}</option>
+					</c:forEach>
+				</select>
 			</div>
 		</div>
 		
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="editGoods">立即提交</button>
+				<button class="layui-btn" lay-submit="" lay-filter="editBicycle">立即提交</button>
 			</div>
 		</div>
 	</form>
 	<script type="text/javascript" src="${ctx }/layui/layui.js"></script>
-	<script type="text/javascript" src="${ctx }/page/goods/editGoods.js"></script>
+	<script type="text/javascript" src="${ctx }/page/bicycle/editbicycle.js"></script>
 </body>
 </html>
