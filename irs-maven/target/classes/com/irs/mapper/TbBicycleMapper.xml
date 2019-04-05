@@ -7,6 +7,7 @@
     <result column="number" property="number" jdbcType="BIGINT" />
     <result column="price" property="price" jdbcType="BIGINT" />
     <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="count" property="count" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="TINYINT" />
     <result column="deflag" property="deflag" jdbcType="TINYINT" />
   </resultMap>
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, number, price, type, status, deflag
+    id, name, number, price, type, count, status, deflag
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.irs.pojo.TbBicycleExample" >
     select
@@ -103,11 +104,11 @@
   </delete>
   <insert id="insert" parameterType="com.irs.pojo.TbBicycle" >
     insert into tb_bicycle (id, name, number, 
-      price, type, status, 
-      deflag)
+      price, type, count, 
+      status, deflag)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=BIGINT}, 
-      #{price,jdbcType=BIGINT}, #{type,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
-      #{deflag,jdbcType=TINYINT})
+      #{price,jdbcType=BIGINT}, #{type,jdbcType=TINYINT}, #{count,jdbcType=INTEGER}, 
+      #{status,jdbcType=TINYINT}, #{deflag,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.irs.pojo.TbBicycle" >
     insert into tb_bicycle
@@ -126,6 +127,9 @@
       </if>
       <if test="type != null" >
         type,
+      </if>
+      <if test="count != null" >
+        count,
       </if>
       <if test="status != null" >
         status,
@@ -149,6 +153,9 @@
       </if>
       <if test="type != null" >
         #{type,jdbcType=TINYINT},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
         #{status,jdbcType=TINYINT},
@@ -182,6 +189,9 @@
       <if test="record.type != null" >
         type = #{record.type,jdbcType=TINYINT},
       </if>
+      <if test="record.count != null" >
+        count = #{record.count,jdbcType=INTEGER},
+      </if>
       <if test="record.status != null" >
         status = #{record.status,jdbcType=TINYINT},
       </if>
@@ -200,6 +210,7 @@
       number = #{record.number,jdbcType=BIGINT},
       price = #{record.price,jdbcType=BIGINT},
       type = #{record.type,jdbcType=TINYINT},
+      count = #{record.count,jdbcType=INTEGER},
       status = #{record.status,jdbcType=TINYINT},
       deflag = #{record.deflag,jdbcType=TINYINT}
     <if test="_parameter != null" >
@@ -221,6 +232,9 @@
       <if test="type != null" >
         type = #{type,jdbcType=TINYINT},
       </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
       <if test="status != null" >
         status = #{status,jdbcType=TINYINT},
       </if>
@@ -236,6 +250,7 @@
       number = #{number,jdbcType=BIGINT},
       price = #{price,jdbcType=BIGINT},
       type = #{type,jdbcType=TINYINT},
+      count = #{count,jdbcType=INTEGER},
       status = #{status,jdbcType=TINYINT},
       deflag = #{deflag,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}

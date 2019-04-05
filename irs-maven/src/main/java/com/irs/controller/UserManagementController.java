@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -60,9 +61,8 @@ public class UserManagementController {
 	 */
 	@SysLog(value="添加用户")
 	@RequestMapping("insUser")
-	@RequiresPermissions("user:user:save")
 	@ResponseBody
-	public ResultUtil insUser(TbUsers user){
+	public ResultUtil insUser(@RequestBody TbUsers user){
 		//防止浏览器提交
 		TbUsers u1 = userServiceImpl.selUserByEmail(user.geteMail(),null);
 		TbUsers u2 = userServiceImpl.selUserByNickname(user.getNickname(),null);
@@ -127,7 +127,6 @@ public class UserManagementController {
 	}
 	
 	@RequestMapping("editUser/{uid}")
-	@RequiresPermissions("user:user:save")
 	public String editUser(@PathVariable("uid")String uid,Model model){
 		TbUsers user=userServiceImpl.selUserByUid(Long.parseLong(uid));
 		model.addAttribute("user", user);
@@ -140,10 +139,9 @@ public class UserManagementController {
 	 * @return
 	 */
 	@SysLog(value="更新用户信息")
-	@RequestMapping("updUser")
-	@RequiresPermissions("user:user:update")
+	@RequestMapping("updateUser")
 	@ResponseBody
-	public ResultUtil updUser(TbUsers user){
+	public ResultUtil updUser(@RequestBody TbUsers user){
 		try {
 			userServiceImpl.updUserService(user);
 			return ResultUtil.ok();

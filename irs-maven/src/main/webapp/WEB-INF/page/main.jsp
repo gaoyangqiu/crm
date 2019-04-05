@@ -72,7 +72,13 @@
 
 
 	</div>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>单车数量统计</legend>
+    </fieldset>
+    <div id="bicycleinfo" style="width: 600px; height: 400px;"></div>
 
+
+    </div>
 	<script type="text/javascript" src="${ctx}/layui/layui.js"></script>
 	<script type="text/javascript" src="${ctx}/js/main.js"></script>
 

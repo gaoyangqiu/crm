@@ -127,11 +127,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void updUserService(TbUsers user) {
-		TbUsers u = tbUsersMapper.selectByPrimaryKey(user.getUid());
-		user.setPassword(u.getPassword());
-		user.seteCode(u.geteCode());
-		user.setCreateTime(u.getCreateTime());
-		tbUsersMapper.updateByPrimaryKey(user);
+		tbUsersMapper.updateByPrimaryKeySelective(user);
 	}
 
 }

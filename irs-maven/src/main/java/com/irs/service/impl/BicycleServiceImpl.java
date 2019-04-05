@@ -134,4 +134,17 @@ public class BicycleServiceImpl implements BicycleService {
         }
         return bicycleVos;
     }
+
+    @Override
+    public Integer seBicycleCountByType(Integer id) {
+        TbBicycleExample bicycleExample=new TbBicycleExample();
+        TbBicycleExample.Criteria criteria=bicycleExample.createCriteria() ;
+         criteria.andTypeEqualTo(id.byteValue());
+        List<TbBicycle> tbBicycles=tbBicycleMapper.selectByExample(bicycleExample);
+        Integer cout=0;
+        for (TbBicycle tbBicycle : tbBicycles) {
+            cout=cout+ tbBicycle.getCount();
+        }
+        return cout;
+    }
 }

@@ -3,18 +3,13 @@ package com.irs.controller;
 
 import com.irs.annotation.SysLog;
 import com.irs.pojo.TbBicycle;
-import com.irs.pojo.TbBicycle;
 import com.irs.service.BicycleService;
 import com.irs.util.ResultUtil;
-import com.irs.vo.BicycleEditVo;
 import com.irs.vo.BicycleTypeVo;
-import com.irs.vo.BicycleVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;

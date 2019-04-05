@@ -58,7 +58,7 @@
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类 -->
 
-        <table schema="tb_users" tableName="tb_users">
+        <table schema="tb_bicycle" tableName="tb_bicycle">
         </table>
     </context>
 </generatorConfiguration>

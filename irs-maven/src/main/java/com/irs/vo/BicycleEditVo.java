@@ -10,6 +10,6 @@ import lombok.Data;
  * @Description:
  */
 @Data
-public class BicycleEditVo extends TbBicycle{
+public class BicycleEditVo extends TbBicycle {
 
 }

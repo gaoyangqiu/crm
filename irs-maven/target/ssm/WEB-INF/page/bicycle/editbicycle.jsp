@@ -59,6 +59,13 @@
 					   placeholder="请输入单车批号" value="${bicycle.price }">
 			</div>
 		</div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单车数量</label>
+            <div class="layui-input-block">
+                <input type="text" name="count" class="layui-input userName"
+                       placeholder="单车数量" value="${bicycle.count }">
+            </div>
+        </div>
 
 		<div class="layui-form-item">
 			<label class="layui-form-label">单车类型</label>

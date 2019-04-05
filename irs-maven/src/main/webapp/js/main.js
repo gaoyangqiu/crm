@@ -128,6 +128,60 @@ layui.config({
 		$(".maxUpload").text(nullData(data.maxUpload));    //最大上传限制
  	}
 
+
+    // 基于准备好的dom，初始化echarts实例
+    var bicycleChart = echarts.init(document.getElementById('bicycleinfo'));
+    bicycleChart.showLoading({
+        text: '正在努力加载中...'
+    });
+
+    var bicyclecategories = [];
+    var bicyclevalues = [];
+
+    // 同步执行
+    $.ajaxSettings.async = false;
+
+    // 加载数据
+    $.get(ctx+'/main/dataBicycleMumber', function (json1) {
+        bicyclecategories=json1.categories;
+        bicyclevalues = json1.values;
+    });
+    option = {
+        title : {
+            text: '单车数量统计',
+            subtext: '每日定时统计',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: bicyclecategories
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:bicyclevalues,
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    bicycleChart.setOption(option);
+    bicycleChart.hideLoading();
 })
 
 

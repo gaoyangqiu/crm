@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.irs.pojo.TbOrder" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="TbBicycle_id" property="TbBicycleId" jdbcType="BIGINT" />
+    <result column="bicycle_id" property="TbBicycleId" jdbcType="BIGINT" />
     <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
     <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
     <result column="total_price" property="totalPrice" jdbcType="BIGINT" />
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, TbBicycle_id, start_time, end_time, total_price, status, dflag, time
+    id, user_id, bicycle_id, start_time, end_time, total_price, status, dflag, time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.irs.pojo.TbOrderExample" >
     select
@@ -104,7 +104,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.irs.pojo.TbOrder" >
-    insert into tb_order (id, user_id, TbBicycle_id,
+    insert into tb_order (id, user_id, bicycle_id,
       start_time, end_time, total_price, 
       status, dflag, time
       )
@@ -123,7 +123,7 @@
         user_id,
       </if>
       <if test="TbBicycleId != null" >
-        TbBicycle_id,
+        bicycle_id,
       </if>
       <if test="startTime != null" >
         start_time,
@@ -190,7 +190,7 @@
         user_id = #{record.userId,jdbcType=BIGINT},
       </if>
       <if test="record.TbBicycleId != null" >
-        TbBicycle_id = #{record.TbBicycleId,jdbcType=BIGINT},
+        bicycle_id = #{record.TbBicycleId,jdbcType=BIGINT},
       </if>
       <if test="record.startTime != null" >
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
@@ -219,7 +219,7 @@
     update tb_order
     set id = #{record.id,jdbcType=BIGINT},
       user_id = #{record.userId,jdbcType=BIGINT},
-      TbBicycle_id = #{record.TbBicycleId,jdbcType=BIGINT},
+      bicycle_id = #{record.TbBicycleId,jdbcType=BIGINT},
       start_time = #{record.startTime,jdbcType=TIMESTAMP},
       end_time = #{record.endTime,jdbcType=TIMESTAMP},
       total_price = #{record.totalPrice,jdbcType=BIGINT},
@@ -237,7 +237,7 @@
         user_id = #{userId,jdbcType=BIGINT},
       </if>
       <if test="TbBicycleId != null" >
-        TbBicycle_id = #{TbBicycleId,jdbcType=BIGINT},
+        bicycle_id = #{TbBicycleId,jdbcType=BIGINT},
       </if>
       <if test="startTime != null" >
         start_time = #{startTime,jdbcType=TIMESTAMP},
@@ -263,7 +263,7 @@
   <update id="updateByPrimaryKey" parameterType="com.irs.pojo.TbOrder" >
     update tb_order
     set user_id = #{userId,jdbcType=BIGINT},
-      TbBicycle_id = #{TbBicycleId,jdbcType=BIGINT},
+      bicycle_id = #{TbBicycleId,jdbcType=BIGINT},
       start_time = #{startTime,jdbcType=TIMESTAMP},
       end_time = #{endTime,jdbcType=TIMESTAMP},
       total_price = #{totalPrice,jdbcType=BIGINT},

@@ -54,13 +54,20 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">单车类型</label>
 			<div class="layui-input-block">
-				<select name="bicycleType" lay-filter="aihao" lay-verify="required">
+				<select name="type" lay-filter="aihao" lay-verify="required">
 				<c:forEach items="${bicycleTypeVos}" var="var" varStatus="vs">
 					<option value="${var.id}"  > ${var.name}</option>
 				</c:forEach>
 				</select>
 			</div>
 		</div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单车数量</label>
+            <div class="layui-input-block">
+                <input type="text" name="count" class="layui-input userName"
+                       placeholder="单车数量" value="${bicycle.count }">
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">单车价格</label>
             <div class="layui-input-block">

@@ -60,8 +60,8 @@ layui.config({
     		type: "post",
             url: ctx+"/user/insUser",
             async:false,
-            data:data.field,
-			dataType:"json",
+            data:JSON.stringify(data.field),
+            contentType: "application/json; charset=utf-8",
 			success:function(d){
 				if(d.code==0){
 		        	msg="用户添加成功！";

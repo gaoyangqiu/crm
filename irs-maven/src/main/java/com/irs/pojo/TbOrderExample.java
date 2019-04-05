@@ -226,62 +226,62 @@ public class TbOrderExample {
         }
 
         public Criteria andTbBicycleIdIsNull() {
-            addCriterion("TbBicycle_id is null");
+            addCriterion("bicycle_id is null");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdIsNotNull() {
-            addCriterion("TbBicycle_id is not null");
+            addCriterion("bicycle_id is not null");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdEqualTo(Long value) {
-            addCriterion("TbBicycle_id =", value, "TbBicycleId");
+            addCriterion("bicycle_id =", value, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdNotEqualTo(Long value) {
-            addCriterion("TbBicycle_id <>", value, "TbBicycleId");
+            addCriterion("bicycle_id <>", value, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdGreaterThan(Long value) {
-            addCriterion("TbBicycle_id >", value, "TbBicycleId");
+            addCriterion("bicycle_id >", value, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("TbBicycle_id >=", value, "TbBicycleId");
+            addCriterion("bicycle_id >=", value, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdLessThan(Long value) {
-            addCriterion("TbBicycle_id <", value, "TbBicycleId");
+            addCriterion("bicycle_id <", value, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdLessThanOrEqualTo(Long value) {
-            addCriterion("TbBicycle_id <=", value, "TbBicycleId");
+            addCriterion("bicycle_id <=", value, "TbBicycleId");
             return (Criteria) this;
         }
 
-        public Criteria andTbBicycleIdIn(List<Long> values) {
-            addCriterion("TbBicycle_id in", values, "TbBicycleId");
+        public Criteria andTbBicycleIdIn(List<Integer> values) {
+            addCriterion("bicycle_id in", values, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdNotIn(List<Long> values) {
-            addCriterion("TbBicycle_id not in", values, "TbBicycleId");
+            addCriterion("bicycle_id not in", values, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdBetween(Long value1, Long value2) {
-            addCriterion("TbBicycle_id between", value1, value2, "TbBicycleId");
+            addCriterion("bicycle_id between", value1, value2, "TbBicycleId");
             return (Criteria) this;
         }
 
         public Criteria andTbBicycleIdNotBetween(Long value1, Long value2) {
-            addCriterion("TbBicycle_id not between", value1, value2, "TbBicycleId");
+            addCriterion("bicycle_id not between", value1, value2, "TbBicycleId");
             return (Criteria) this;
         }
 

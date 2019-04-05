@@ -30,4 +30,6 @@ public interface BicycleService {
 
 
     List<BicycleTypeVo> bicycleType();
+
+    Integer seBicycleCountByType(Integer id);
 }

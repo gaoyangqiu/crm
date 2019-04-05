@@ -5,11 +5,13 @@ public class TbBicycle {
 
     private String name;
 
-    private Integer number;
+    private Long number;
 
-    private Integer price;
+    private Long price;
 
     private Integer type;
+
+    private Integer count;
 
     private Integer status;
 
@@ -31,19 +33,19 @@ public class TbBicycle {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(Long number) {
         this.number = number;
     }
 
-    public Integer getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
@@ -53,6 +55,14 @@ public class TbBicycle {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public Integer getStatus() {

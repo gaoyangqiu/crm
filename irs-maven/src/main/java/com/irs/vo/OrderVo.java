@@ -1,5 +1,6 @@
 package com.irs.vo;
 
+
 import com.irs.pojo.TbOrder;
 import lombok.Data;
 
@@ -9,7 +10,7 @@ import lombok.Data;
  * @Description:
  */
 @Data
-public class OrderVo extends TbOrder{
+public class OrderVo extends TbOrder {
 
     private String bicycleName;
 

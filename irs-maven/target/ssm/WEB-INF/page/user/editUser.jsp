@@ -33,7 +33,7 @@
 </style>
 </head>
 <body class="childrenBody">
-	<form class="layui-form" style="width: 80%;">
+	<form class="layui-form" style="width: 80%;" >
 		<!-- 管理员id -->
 		<input type="hidden" name="uid" value="${user.uid }" id="uid"/>
 		<div class="layui-form-item">
@@ -42,6 +42,7 @@
 				<input type="text" name="eMail" id="eMail" class="layui-input userName"
 					lay-verify="email" placeholder="请输入邮箱" value="${user.eMail }">
 			</div>
+        </div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">昵称</label>
 			<div class="layui-input-block">

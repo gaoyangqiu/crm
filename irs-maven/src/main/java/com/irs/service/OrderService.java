@@ -3,6 +3,7 @@ package com.irs.service;
 
 
 import com.irs.vo.OrderVo;
+import com.irs.vo.StatisticsBicycleMoneyVo;
 
 import java.util.List;
 
@@ -13,7 +14,8 @@ import java.util.List;
  */
 public interface OrderService {
 
-    List<OrderVo> findOrderByUserId(int i);
 
-    void orderPay(Integer orderId, Long userId);
+
+    List<StatisticsBicycleMoneyVo> statisticsBicycleMoneyVoList();
+
 }
