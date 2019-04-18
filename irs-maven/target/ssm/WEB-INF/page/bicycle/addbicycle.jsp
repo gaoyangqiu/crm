@@ -35,7 +35,7 @@
 </head>
 <body class="childrenBody">
 	<form class="layui-form" style="width: 80%;" id="aaf">
-		<div class="layui-form-item">
+<%--		<div class="layui-form-item">
 			<label class="layui-form-label">单车名称</label>
 			<div class="layui-input-block">
 				<input type="text" class="layui-input userName"
@@ -49,7 +49,7 @@
 				<input type="text" class="layui-input userName"
 					    placeholder="请输入单车编号" name="number" value="">
 			</div>
-		</div>
+		</div>--%>
 
 		<div class="layui-form-item">
 			<label class="layui-form-label">单车类型</label>
@@ -61,6 +61,17 @@
 				</select>
 			</div>
 		</div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">放置点</label>
+        <div class="layui-input-block">
+            <select name="placement" lay-filter="aihao" lay-verify="required">
+                <c:forEach items="${tbPlacements}" var="var" varStatus="vs">
+                    <option value="${var.id}"  > ${var.name}</option>
+                </c:forEach>
+            </select>
+        </div>
+    </div>
         <div class="layui-form-item">
             <label class="layui-form-label">单车数量</label>
             <div class="layui-input-block">
@@ -87,13 +98,13 @@
 		</div>--%>
 
 
-		<div class="layui-form-item">
+<%--		<div class="layui-form-item">
 			<label class="layui-form-label">单车价格</label>
 			<div class="layui-input-block">
 				<input type="text" name="price" class="layui-input userName"
 					    placeholder="请输入单车价格" value="">
 			</div>
-		</div>
+		</div>--%>
 
 		
 		<div class="layui-form-item">

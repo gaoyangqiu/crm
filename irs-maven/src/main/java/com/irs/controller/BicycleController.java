@@ -3,8 +3,10 @@ package com.irs.controller;
 
 import com.irs.annotation.SysLog;
 import com.irs.pojo.TbBicycle;
+import com.irs.pojo.TbPlacement;
 import com.irs.service.BicycleService;
 import com.irs.util.ResultUtil;
+import com.irs.vo.BicycleSaveVo;
 import com.irs.vo.BicycleTypeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,7 +38,9 @@ public class BicycleController {
     @RequestMapping("/addBicycle")
     public String addBicycle(Model model) {
         List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
+        List<TbPlacement> tbPlacements=bicycleService.placements();
         model.addAttribute("bicycleTypeVos",bicycleTypeVos);
+        model.addAttribute("tbPlacements",tbPlacements);
         return "page/bicycle/addbicycle";
     }
 
@@ -45,8 +49,10 @@ public class BicycleController {
     public String editBicycle(Integer id,Model model) {
         TbBicycle bicycle=bicycleService.selectBicycleById(id);
         List<BicycleTypeVo> bicycleTypeVos=bicycleService.bicycleType();
+        List<TbPlacement> tbPlacements=bicycleService.placements();
         model.addAttribute("bicycle",bicycle);
         model.addAttribute("bicycleTypeVos",bicycleTypeVos);
+        model.addAttribute("tbPlacements",tbPlacements);
         return "page/bicycle/editbicycle";
     }
 
@@ -58,16 +64,16 @@ public class BicycleController {
     }
 
     /**
-     * 添加供应商信息
-     * @param bicycle
+     * 添加单车信息
+     * @param saveVo
      * @return
      */
-    @SysLog(value="添加供应商信息")
+    @SysLog(value="添加单车信息")
     @RequestMapping("/save")
     @ResponseBody
-    public ResultUtil insBicycle(TbBicycle bicycle) {
+    public ResultUtil insBicycle(BicycleSaveVo saveVo) {
         try {
-            bicycleService.addBicycle(bicycle);
+            bicycleService.addBicycle(saveVo);
             return ResultUtil.ok();
         } catch (Exception e) {
             return ResultUtil.error("添加出错,稍后再试！");
@@ -76,11 +82,11 @@ public class BicycleController {
 
 
     /**
-     * 删除指定供应商信息
+     * 删除指定单车信息
      * @param id
      * @return
      */
-    @SysLog(value="删除供应商信息")
+    @SysLog(value="删除单车信息")
     @RequestMapping("/delete")
     @ResponseBody
     public ResultUtil delBicycleById(Integer id) {
@@ -93,11 +99,11 @@ public class BicycleController {
     }
 
     /**
-     * 批量删除供应商信息
+     * 批量删除单车信息
      * @param bicycleStr
      * @return
      */
-    @SysLog(value="批量删除供应商信息")
+    @SysLog(value="批量删除单车信息")
     @RequestMapping("/deletes")
     @ResponseBody
     public ResultUtil delBicycle(String bicycleStr) {
@@ -110,11 +116,11 @@ public class BicycleController {
     }
 
     /**
-     * 供应商信息
+     * 单车信息
      * @param bicycle
      * @return
      */
-    @SysLog(value="更新供应商信息")
+    @SysLog(value="更新单车信息")
     @RequestMapping("/update")
     @ResponseBody
     public ResultUtil updateBicycle(TbBicycle bicycle) {

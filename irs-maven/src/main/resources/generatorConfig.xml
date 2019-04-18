@@ -21,7 +21,7 @@
         <!-- JDBC连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/crm"
+                connectionURL="jdbc:mysql://39.108.236.16:3306/crm"
                 userId="root"
                 password="248248">
         </jdbcConnection>
@@ -58,7 +58,8 @@
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类 -->
 
-        <table schema="tb_bicycle" tableName="tb_bicycle">
+        <table schema="tb_bicycle" tableName="tb_bicycle" enableCountByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
         </table>
     </context>
 </generatorConfiguration>

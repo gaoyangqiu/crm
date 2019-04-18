@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import com.irs.mapper.TbBicycleMapper;
 import com.irs.mapper.TbOrderMapper;
 import com.irs.pojo.TbBicycle;
-import com.irs.pojo.TbBicycleExample;
 import com.irs.pojo.TbOrder;
 import com.irs.pojo.TbOrderExample;
 import com.irs.service.OrderService;
@@ -35,10 +34,7 @@ public class OrderServiceImpl implements OrderService {
         List<StatisticsBicycleMoneyVo> statisticsBicycleMoneyVos=Lists.newArrayList();
         for (BicycleType bicycleType : BicycleType.values()) {
             StatisticsBicycleMoneyVo vo=new StatisticsBicycleMoneyVo();
-            TbBicycleExample bicycleExample=new TbBicycleExample();
-            TbBicycleExample.Criteria criteria=bicycleExample.createCriteria();
-            criteria.andTypeEqualTo(bicycleType.getType().byteValue());
-            List<TbBicycle> bicycles=bicycleMapper.selectByExample(bicycleExample);
+            List<TbBicycle> bicycles=bicycleMapper.selectByType(bicycleType.getType());
             List<Integer> bicucleIds= Lists.transform(bicycles, new Function<TbBicycle, Integer>() {
                 @Override
                 public Integer apply(TbBicycle input) {

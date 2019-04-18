@@ -5,11 +5,15 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import com.irs.mapper.TbBicycleMapper;
+import com.irs.mapper.TbBicycleTypeMapper;
+import com.irs.mapper.TbPlacementMapper;
 import com.irs.pojo.TbBicycle;
-import com.irs.pojo.TbBicycleExample;
+import com.irs.pojo.TbBicycleType;
+import com.irs.pojo.TbPlacement;
 import com.irs.service.BicycleService;
 import com.irs.service.enumt.BicycleType;
 import com.irs.util.ResultUtil;
+import com.irs.vo.BicycleSaveVo;
 import com.irs.vo.BicycleTypeVo;
 import com.irs.vo.BicycleVo;
 import org.apache.commons.lang.StringUtils;
@@ -28,6 +32,11 @@ import java.util.List;
 public class BicycleServiceImpl implements BicycleService {
     @Autowired
     private TbBicycleMapper tbBicycleMapper;
+    @Autowired
+    private TbBicycleTypeMapper tbBicycleTypeMapper;
+
+    @Autowired
+    private TbPlacementMapper tbPlacementMapper;
     @Override
     public TbBicycle selectBicycleById(Integer id) {
 
@@ -55,26 +64,41 @@ public class BicycleServiceImpl implements BicycleService {
     }
 
     @Override
-    public void addBicycle(TbBicycle bicycle) {
+    public void addBicycle(BicycleSaveVo bicycle) {
+        //查询放置点的单车数量,并修改
+        TbPlacement tbPlacement=tbPlacementMapper.selectByPrimaryKey(bicycle.getPlacement());
+        tbPlacement.setCount(tbPlacement.getCount()+bicycle.getCount());
+        tbPlacementMapper.updateByPrimaryKeySelective(tbPlacement);
+        //查询单车类型的单车数量,并修改
+        TbBicycleType tbBicycleType=tbBicycleTypeMapper.selectByPrimaryKey(bicycle.getType());
+        tbBicycleType.setCount(tbBicycleType.getCount()+bicycle.getCount());
+        tbBicycleTypeMapper.updateByPrimaryKeySelective(tbBicycleType);
+        //根据添加单车的数量生成单车模型
+        int index=1;
+        for (int i=0;i<bicycle.getCount();i++) {
+            TbBicycle tbBicycle=new TbBicycle();
+            tbBicycle.setDeflag(0);
+            tbBicycle.setStatus(0);
+            tbBicycle.setNumber(bicycle.getType()*10000+index);
+            tbBicycle.setPrice(bicycle.getPrice());
+            tbBicycle.setType(bicycle.getType());
+            tbBicycle.setPlacement(bicycle.getPlacement());
+            tbBicycleMapper.insertSelective(tbBicycle);
+            index++;
+        }
 
-        bicycle.setDeflag(1);
-        bicycle.setStatus(1);
-        tbBicycleMapper.insertSelective(bicycle);
     }
 
     @Override
     public ResultUtil selectBicycles(Integer page, Integer limit) {
         PageHelper.startPage(page, limit);
-        TbBicycleExample example=new TbBicycleExample();
-        example.setOrderByClause("id DESC");
-        TbBicycleExample.Criteria criteria = example.createCriteria();
-        List<TbBicycle> tbBicycles=tbBicycleMapper.selectByExample(example);
+        List<TbBicycle> tbBicycles=tbBicycleMapper.selectByOrderDesc();
+        PageInfo<TbBicycle> pageInfo = new PageInfo<TbBicycle>(tbBicycles);
         List<BicycleVo> bicycleVos=coverVo(tbBicycles);
-        PageInfo<BicycleVo> pageInfo = new PageInfo<BicycleVo>(bicycleVos);
         ResultUtil resultUtil = new ResultUtil();
         resultUtil.setCode(0);
         resultUtil.setCount(pageInfo.getTotal());
-        resultUtil.setData(pageInfo.getList());
+        resultUtil.setData(bicycleVos);
         return resultUtil;
     }
 
@@ -83,7 +107,10 @@ public class BicycleServiceImpl implements BicycleService {
         for (TbBicycle bicycle : tbBicycles) {
             BicycleVo vo=new BicycleVo();
             BeanUtils.copyProperties(bicycle,vo);
-            vo.setTypeName(BicycleType.getBicycleType(bicycle.getType()).getDesc());
+            TbBicycleType tbBicycleType=tbBicycleTypeMapper.selectByPrimaryKey(bicycle.getType());
+            TbPlacement tbPlacement=tbPlacementMapper.selectByPrimaryKey(bicycle.getPlacement());
+            vo.setTypeName(tbBicycleType.getName());
+            vo.setPlacementName(tbPlacement.getName());
             bicycleVos.add(vo);
         }
         return bicycleVos;
@@ -126,25 +153,26 @@ public class BicycleServiceImpl implements BicycleService {
     @Override
     public List<BicycleTypeVo> bicycleType() {
         List<BicycleTypeVo> bicycleVos=Lists.newArrayList();
-        for (BicycleType bicycleType : BicycleType.values()) {
+        List<TbBicycleType> tbBicycleTypes=tbBicycleTypeMapper.selectAll();
+        for (TbBicycleType bicycleType : tbBicycleTypes) {
             BicycleTypeVo vo=new BicycleTypeVo();
-            vo.setId(bicycleType.getType());
-            vo.setName(bicycleType.getDesc());
+            vo.setId(bicycleType.getId());
+            vo.setName(bicycleType.getName());
             bicycleVos.add(vo);
         }
         return bicycleVos;
     }
 
     @Override
+    public List<TbPlacement> placements() {
+        List<TbPlacement> tbPlacements=tbPlacementMapper.selectAll();
+        return tbPlacements;
+    }
+
+    @Override
     public Integer seBicycleCountByType(Integer id) {
-        TbBicycleExample bicycleExample=new TbBicycleExample();
-        TbBicycleExample.Criteria criteria=bicycleExample.createCriteria() ;
-         criteria.andTypeEqualTo(id.byteValue());
-        List<TbBicycle> tbBicycles=tbBicycleMapper.selectByExample(bicycleExample);
+        List<TbBicycle> tbBicycles=tbBicycleMapper.selectByType(id);
         Integer cout=0;
-        for (TbBicycle tbBicycle : tbBicycles) {
-            cout=cout+ tbBicycle.getCount();
-        }
         return cout;
     }
 }

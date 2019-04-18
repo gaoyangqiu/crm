@@ -21,7 +21,7 @@ layui.config({
                 ,{field:'number', title: '单车编号'}
                 ,{field:'price', title: '单车价格'}
               ,{field:'typeName', title: '单车类型'}
-                ,{field:'count', title: '单车数量'}
+                ,{field:'placementName', title: '单车放置点'}
               ,{title: '操作',toolbar: '#barEdit'}
 		    ]]
 				,page: true //开启分页
